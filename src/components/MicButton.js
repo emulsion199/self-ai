@@ -4,7 +4,7 @@ import 'react-h5-audio-player/lib/styles.css';
 import ReactPlayer from 'react-player'
 import axios from 'axios'
 import store from '../index'
-import { addTochatdata_input, addTochatdata_output, addVideo} from "../redux_src/chat_rdx";
+import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../redux_src/chat_rdx";
 import connect from 'react-redux'
 import fv from './face.mp4'
 const mapStateToProps = (state) => {
@@ -86,10 +86,11 @@ const AudioRecord = () => {
       setOnRec(true);
       setAudio(URL.createObjectURL(e.data))
  
-      var wavfromblob = new File([e.data], "recorded"+Math.floor((Math.random(100)*100))+".ogg");
+      var wavfromblob = new File([e.data], "recorded"+1+".ogg");
       
       var fd=new FormData()
       fd.append("audio",wavfromblob)
+      console.log(fd)
       
       axios.post('http://127.0.0.1:5001',fd)
         .then(function(response) {

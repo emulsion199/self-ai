@@ -4,20 +4,22 @@ import SpeechBalloonOpp from './SpeechBalloonOpp'
 
 import store from '../index'
 import { connect,useSelector } from 'react-redux'
-import { addTochatdata_input, addTochatdata_output,addVideo } from "../redux_src/chat_rdx";
+import { addTochatdata_input, addTochatdata_output,addVideo,setImageNum } from "../redux_src/chat_rdx";
 import AudioRecord from './MicButton'
 import ReactPlayer from 'react-player'
 
 
 const mapStateToProps = state => ({
     chat: state.chat,
-    video: state.video
+    video: state.video,
+    image: state.image
   });
   
 const mapDispatchToProps = {
     addTochatdata_input,
     addTochatdata_output,
     addVideo,
+    setImageNum,
   };
   
   
@@ -63,7 +65,7 @@ class MainComponent extends Component
     
     
             <div>
-              <div>{vid}</div>
+              <div>{store.getState()['image']}</div>
                 <div style={{
                     display:'grid',
                     gridTemplateRows:' 1fr 30px',

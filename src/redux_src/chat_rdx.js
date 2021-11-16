@@ -18,9 +18,16 @@ export function addVideo(video_Obj) {
       video_Obj
     }
   }
+export function setImageNum(idx) {
+  return {
+    type: 'SET_IMAGE',
+    idx
+  }
+}
 const initialState={
     video:'blob:http://127.0.0.1:3000/4ad77f0d-e79c-43d2-b4c6-8ef867a175e7',
     chat:[[0,'example input'],[1,'example output']],
+    image:0,
     
 }
 export default function reducer(state = initialState, action) {
@@ -39,6 +46,11 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
           video:action.video_Obj
+      }
+      case 'SET_IMAGE':
+      return {
+        ...state,
+          image:action.idx
       }
     default:
       return state
