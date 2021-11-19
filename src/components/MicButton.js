@@ -24,7 +24,7 @@ const mapStateToProps = (state) => {
       }
     };
   };
-const AudioRecord = (port) => {
+const AudioRecord = (arg) => {
   const [stream, setStream] = useState();
   const [media, setMedia] = useState();
   const [onRec, setOnRec] = useState(true);
@@ -92,13 +92,13 @@ const AudioRecord = (port) => {
       fd.append("audio",wavfromblob)
       console.log(fd)
     
-      axios.post('http://127.0.0.1:'+port.port,fd)
+      axios.post(arg._url+':'+arg._port,fd)
         .then(function(response) {
           
             store.dispatch(addTochatdata_input(response.data['input']))
             store.dispatch(addTochatdata_output(response.data['output']))
            
-            axios.get('http://127.0.0.1:'+port.port+'/make',{responseType:'blob'}).then(function(response)
+            axios.get(arg._url+':'+arg._port+'/make',{responseType:'blob'}).then(function(response)
             {
               console.log(response.data)
               //console.log(window.URL.createObjectURL(vid))

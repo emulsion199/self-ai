@@ -9,8 +9,8 @@ class App extends Component
   {
     return(
       <div>
-        <Route path="/" component={StartComponent} exact/>
-        <Route path="/main" component={MainComponent} exact/>
+        <Route path="/" render={(props) => <StartComponent port={8881} url={"http://52.156.155.214"}></StartComponent>} exact/>
+        <Route path="/main" render={(props) => <MainComponent port={8882} url={"http://52.156.155.214"}></MainComponent>} exact/>
        
  
       </div>
