@@ -91,31 +91,15 @@ const AudioRecord = (arg) => {
       var fd=new FormData()
       fd.append("audio",wavfromblob)
       console.log(fd)
-<<<<<<< Updated upstream
-    
-<<<<<<< HEAD
       axios.post(arg._url+':'+arg._port,fd)
-=======
-      axios.post('http://127.0.0.1:'+port.port,fd)
-=======
-      
-      axios.post('http://localhost:5001',fd)
->>>>>>> Stashed changes
->>>>>>> 9d0b23887726bc98438f35d70676cf265a45377a
+
         .then(function(response) {
           
             store.dispatch(addTochatdata_input(response.data['input']))
             store.dispatch(addTochatdata_output(response.data['output']))
-           
-<<<<<<< HEAD
+
             axios.get(arg._url+':'+arg._port+'/make',{responseType:'blob'}).then(function(response)
-=======
-<<<<<<< Updated upstream
-            axios.get('http://127.0.0.1:'+port.port+'/make',{responseType:'blob'}).then(function(response)
-=======
-            axios.get('http://localhost:5001/make',{responseType:'blob'}).then(function(response)
->>>>>>> Stashed changes
->>>>>>> 9d0b23887726bc98438f35d70676cf265a45377a
+
             {
               console.log(response.data)
               //console.log(window.URL.createObjectURL(vid))

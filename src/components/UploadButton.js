@@ -5,7 +5,7 @@ import store from '../index'
 import { connect,useSelector } from 'react-redux'
 import { addTochatdata_input, addTochatdata_output,addVideo,setImageNum } from "../redux_src/chat_rdx";
 import axios from 'axios'
-class ImageButton extends Component
+class UploadButton extends Component
 {
     render()
     {
@@ -14,18 +14,12 @@ class ImageButton extends Component
         var port = this.props._port
         var url = this.props._url
         return(
-            <Link to='/main'
+            <div 
+            onClick={()=>{alert('upload')}}
             
-            onClick={()=>{store.dispatch(setImageNum(id))
-                axios.post(url+':'+port+'/prepare',{'image_num':store.getState()['image']})
-                .then(function(response) {
-                    console.log(response)
-
-                }
-                )
             
         
-            }}
+          
             style={{
                 width:"100px",
                 height:"100px",
@@ -44,8 +38,8 @@ class ImageButton extends Component
 
                 }}></img>
                
-            </Link>
+            </div>
         )
     }
 }
-export default ImageButton
+export default UploadButton
