@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# UI server with react
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -16,6 +16,12 @@ You will also see any lint errors in the console.
 
 ### `npm install`
 Download the package specified in package.json.
+
+# If delploying in a server
+
+### `npm run build`
+
+### `PORT=portnum serve -s build`
 
 # You may change your python-flask server url used in Axios
 
