@@ -26,9 +26,9 @@ class StartComponent extends Component
         marginTop:'200px',
         
       }}>
-       <ImageButton _id={1} _imgsrc={require('../image/1.jpeg').default}></ImageButton>
-       <ImageButton _id={2} _imgsrc={require('../image/2.jpeg').default}></ImageButton>
-       <ImageButton _id={3} _imgsrc={require('../image/3.jpeg').default}></ImageButton>
+       <ImageButton _port={8882} _id={1} _imgsrc={require('../image/1.jpeg').default}></ImageButton>
+       <ImageButton _port={8882} _id={2} _imgsrc={require('../image/2.jpeg').default}></ImageButton>
+       <ImageButton _port={8882} _id={3} _imgsrc={require('../image/3.jpeg').default}></ImageButton>
       </div>
       </div>
     )

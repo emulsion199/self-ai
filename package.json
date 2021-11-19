@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "argparse": "^2.0.1",
     "axios": "^0.24.0",
     "emotion": "^11.0.0",
     "inline-worker": "^1.1.0",
@@ -30,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "grunt": "grunt"
+
   },
   "eslintConfig": {
     "extends": [

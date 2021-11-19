@@ -11,11 +11,12 @@ class ImageButton extends Component
     {
         var id=this.props._id
         var imgsrc= this.props._imgsrc
+        var port = this.props._port
         return(
             <Link to='/main'
             
             onClick={()=>{store.dispatch(setImageNum(id))
-                axios.post('http://127.0.0.1:5002/prepare',1)
+                axios.post('http://127.0.0.1:'+port+'/prepare',{'num':store.getState()['image']})
                 .then(function(response) {
                     console.log(response)
 

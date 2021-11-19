@@ -83,7 +83,7 @@ class MainComponent extends Component
                     </div>
                 
                 
-              <div style={{height:'50px'}}><AudioRecord></AudioRecord></div>
+              <div style={{height:'50px'}}><AudioRecord port={8881}></AudioRecord></div>
                 
                
 
