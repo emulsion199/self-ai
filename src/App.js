@@ -9,8 +9,13 @@ class App extends Component
   {
     return(
       <div>
+<<<<<<< Updated upstream
         <Route path="/" render={(props) => <StartComponent port={8881} url={"http://52.156.155.214"}></StartComponent>} exact/>
         <Route path="/main" render={(props) => <MainComponent port={8882} url={"http://52.156.155.214"}></MainComponent>} exact/>
+=======
+        <Route exact path="/" render={(props)=> <StartComponent></StartComponent>} />
+        <Route path="/main" render={(props)=> <MainComponent></MainComponent>}exact/>
+>>>>>>> Stashed changes
        
  
       </div>

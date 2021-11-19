@@ -17,7 +17,11 @@ class ImageButton extends Component
             <Link to='/main'
             
             onClick={()=>{store.dispatch(setImageNum(id))
+<<<<<<< Updated upstream
                 axios.post(url+':'+port+'/prepare',{'image_num':store.getState()['image']})
+=======
+                axios.post(url+':'+port+'/prepare',{'num':store.getState()['image']})
+>>>>>>> Stashed changes
                 .then(function(response) {
                     console.log(response)
 
