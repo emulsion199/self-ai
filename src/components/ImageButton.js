@@ -17,7 +17,9 @@ class ImageButton extends Component
             <Link to='/main'
             
             onClick={()=>{store.dispatch(setImageNum(id))
-                axios.post(url+':'+port+'/',{'image_num':store.getState()['image']})
+
+                axios.post(url+':'+port+'/prepare',{'image_num':store.getState()['image']})
+
                 .then(function(response) {
                     console.log(response)
 
