@@ -55,6 +55,16 @@ class MainComponent extends Component
     
         const chat=store.getState()['chat']
         const vid=store.getState()['video']
+        var imgorvid=1
+       
+        if(vid=='0')
+        {
+          imgorvid=<img src={require("../image/"+store.getState()['image']+'.jpeg').default} style={{width:'100%',height:'100%'}}></img> 
+        }
+        else
+        {
+          imgorvid= <ReactPlayer url={vid} playing={true}></ReactPlayer>
+        }
         
 
 
@@ -78,12 +88,12 @@ class MainComponent extends Component
                         backGroundColor:'yellow',
                         width:'380px',
                         height:'400px'}}>
-
-                    <ReactPlayer url={vid} playing={true}></ReactPlayer>
+                    {imgorvid}
+                    
                     </div>
                 
                 
-              <div style={{height:'50px'}}><AudioRecord port={8881}></AudioRecord></div>
+              <div style={{height:'50px'}}><AudioRecord _port={this.props.port} _url={this.props.url}></AudioRecord></div>
                 
                
 

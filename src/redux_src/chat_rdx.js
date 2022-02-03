@@ -25,7 +25,7 @@ export function setImageNum(idx) {
   }
 }
 const initialState={
-    video:'blob:http://127.0.0.1:3000/4ad77f0d-e79c-43d2-b4c6-8ef867a175e7',
+    video:'0',
     chat:[[0,'example input'],[1,'example output']],
     image:0,
     

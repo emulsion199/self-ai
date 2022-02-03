@@ -31,7 +31,7 @@ class StartComponent extends Component
        <ImageButton _port={this.props.port} _url={this.props.url} _id={1} _imgsrc={require('../image/1.jpeg').default}></ImageButton>
        <ImageButton _port={this.props.port} _url={this.props.url} _id={2} _imgsrc={require('../image/2.jpeg').default}></ImageButton>
        <ImageButton _port={this.props.port} _url={this.props.url} _id={3} _imgsrc={require('../image/3.jpeg').default}></ImageButton>
-       <UploadButton _port={this.props.port} _url={this.props.url} _id={4} _imgsrc={require('../image/upload.jpeg').default}></UploadButton>
+       <UploadButton imgsrc={require('../image/upload.jpeg').default}></UploadButton>
       </div>
       </div>
     )
