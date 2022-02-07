@@ -23,11 +23,6 @@ const mapDispatchToProps = {
   };
   
   
-  
-
-     
-   
-
 class MainComponent extends Component 
 {
     constructor(props)
@@ -65,11 +60,6 @@ class MainComponent extends Component
         {
           imgorvid= <ReactPlayer url={vid} playing={true}></ReactPlayer>
         }
-        
-
-
-      
-          
 
         return(
     

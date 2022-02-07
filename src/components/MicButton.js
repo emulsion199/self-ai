@@ -99,7 +99,7 @@ const AudioRecord = (port) => {
             store.dispatch(addTochatdata_input(response.data['input']))
             store.dispatch(addTochatdata_output(response.data['output']))
 
-            axios.get(port._url+':'+port._port+'/make',{responseType:'blob'}).then(function(response)
+            axios.get(port._url+':'+port._port+'/get_mp4',{responseType:'blob'}).then(function(response)
 
             {
               console.log(response.data)
