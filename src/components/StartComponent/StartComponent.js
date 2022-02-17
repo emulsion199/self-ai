@@ -26,7 +26,7 @@ const StartComponent=()=>
     return(
       
       <div style={{
-        height:'100.1vh',
+        height:'100%',
         overflowY:'hidden',
         }}>
           <div style={{
