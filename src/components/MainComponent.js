@@ -62,19 +62,17 @@ class MainComponent extends Component
         }
 
         return(
-    
-    
             <div>
-              <div>{store.getState()['image']}</div>
+            
                 <div style={{
                     display:'grid',
-                    gridTemplateRows:' 1fr 30px',
-                   
-                    
+                    gridTemplateRows:' 1fr 100px',
                 }}>
                     <div>
                         <div
-                        style={{margin:'0 auto',
+                        style={{
+                          position:'relative',
+                          margin:'0 auto',
                         backGroundColor:'yellow',
                         width:'380px',
                         height:'400px'}}>
@@ -83,7 +81,12 @@ class MainComponent extends Component
                     </div>
                 
                 
-              <div style={{height:'50px'}}><AudioRecord _port={this.props.port} _url={this.props.url}></AudioRecord></div>
+              <div style={{height:'50px',
+              position:'absolute',
+              top:'340px',
+              width:'100%',
+              
+            }}><AudioRecord _port={this.props.port} _url={this.props.url}></AudioRecord></div>
                 
                
 

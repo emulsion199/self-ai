@@ -25,24 +25,15 @@ class ImageButton extends Component
 
                 }
                 )
-            
-        
             }}
-            style={{
-                width:"100px",
-                height:"100px",
-                backgroundColor:"white",
-                borderRadius:'100px',
-                boxShadow:'0px 2px 5px 0px gray',
-                margin: '0 auto',
-            }}>
+            >
                 <img 
                 src={imgsrc}
                 style={{
                     objectFit:'fill',
-                    width:'100%',
-                    height:'100%',
-                    borderRadius:'100px',
+                    width:'300px',
+                    height:'300px',
+                    
 
                 }}></img>
                

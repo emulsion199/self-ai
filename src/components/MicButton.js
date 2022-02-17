@@ -6,7 +6,7 @@ import axios from 'axios'
 import store from '../index'
 import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../redux_src/chat_rdx";
 import connect from 'react-redux'
-import fv from './face.mp4'
+
 const mapStateToProps = (state) => {
     return state
   };
@@ -98,7 +98,7 @@ const AudioRecord = (port) => {
           
             store.dispatch(addTochatdata_input(response.data['input']))
             store.dispatch(addTochatdata_output(response.data['output']))
-
+            /*
             axios.get(port._url+':'+port._port+'/get_mp4',{responseType:'blob'}).then(function(response)
 
             {
@@ -110,8 +110,9 @@ const AudioRecord = (port) => {
                // console.log(result);
                 store.dispatch(addVideo(URL.createObjectURL(response.data)))
              
-            })
-        })
+            })*/
+        }
+        )
         .catch(function(error) {
             
             console.log(error);
@@ -144,19 +145,29 @@ const AudioRecord = (port) => {
 >
       <div
       style={{height:'50px',
-    backgroundColor:'gray',
+    backgroundColor:'black',
+    opacity:'0.6',
     width:'50px',
     borderRadius:'100px',
     color:'white',
     margin:'0 auto',
-}}>
-    <div
+}}
       onClick={onRec ? onRecAudio : offRecAudio}>
-          <div style={{padding:'10px',
-        borderRadius:'100px'}}> {onRec ? '녹음':'종료'}</div>
+      
+        <img src={require('../image/mic.png').default}
+        style={{
+          width:'50px',
+          height:'50px',
+          margin:'0 auto',
+          
+        }}>
+          
+         </img>
+     
+       
          
          
-    </div>
+  
     </div>
     
       

@@ -1,5 +1,5 @@
 import store from "../index"
-import vdeo from '../components/face.mp4'
+
 export function addTochatdata_input(text) {
     return {
       type: 'ADD_CHAT_INPUT',
