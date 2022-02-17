@@ -21,8 +21,8 @@ const css={
         border: '1px solid black',
     },
     image:{
-        height:'300px',
-        width:'300px',
+        height:'400px',
+        width:'800px',
         //borderRadius: '100%',
     },
     name:{
@@ -49,23 +49,13 @@ const OurImage=(args)=>
     const type= args.type
     return(
         <div>
-            <div
-            style={{
-                gridTemplateColumns: '300px 500px',
-                display: 'grid',
-            }}>
-            <div>
+       
+ 
                 <div>
                     {/*<div style={css.ellipse}> </div>*/}
-                    <img style={css.image} src={require('../../image/'+type+'.jpeg').default}></img>
+                    <img style={css.image} src={require('../../image/'+type+'_temp.png').default}></img>
                 </div>
-                <div style={{ width: '170px'}}>
-                <div style={css.name}>{name[type]}</div>
-                <div style={css.role}> {role[type]} </div>
-                </div>
-            </div>
-            <div style={css.desc}>{desc[type]}</div>
-            </div>
+                
         </div>
     )
 }

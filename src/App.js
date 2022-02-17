@@ -1,7 +1,7 @@
 import React,{Component} from "react"
 import StartComponent from "./components/StartComponent/StartComponent"
 import {Route} from 'react-router-dom'
-import MainComponent from "./components/MainComponent"
+import MainComponent from "./components/MainComponent/MainComponent"
 const App=()=>
 {
 

@@ -27,7 +27,7 @@ export function setImageNum(idx) {
 const initialState={
     video:'0',
     chat:[[0,'example input'],[1,'example output']],
-    image:0,
+    image:1,
     
 }
 export default function reducer(state = initialState, action) {

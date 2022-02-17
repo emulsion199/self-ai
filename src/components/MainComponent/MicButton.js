@@ -3,8 +3,8 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import ReactPlayer from 'react-player'
 import axios from 'axios'
-import store from '../index'
-import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../redux_src/chat_rdx";
+import store from '../../index'
+import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../../redux_src/chat_rdx";
 import connect from 'react-redux'
 
 const mapStateToProps = (state) => {
@@ -145,8 +145,7 @@ const AudioRecord = (port) => {
 >
       <div
       style={{height:'50px',
-    backgroundColor:'black',
-    opacity:'0.6',
+    backgroundColor:'rgba(255,255,255,1)',
     width:'50px',
     borderRadius:'100px',
     color:'white',
@@ -154,11 +153,14 @@ const AudioRecord = (port) => {
 }}
       onClick={onRec ? onRecAudio : offRecAudio}>
       
-        <img src={require('../image/mic.png').default}
+        <img src={require('../../image/mic.png').default}
         style={{
-          width:'50px',
-          height:'50px',
-          margin:'0 auto',
+          width:'30px',
+          height:'30px',
+          marginLeft:'10px',
+          marginTop:'10px',
+          borderRadius:'100%',
+          opacity:'1',
           
         }}>
           

@@ -1,11 +1,12 @@
 import {useState,useEffect,useRef} from 'react'
 import OurImage from './OurImage'
-const type=[1,2,3]
+import { Link } from 'react-router-dom'
+const type=[1,2,3,4]
 const css={
     real_display:
     {
         overflowX:'hidden',
-        width:'100vw',
+        width:'100%',
         margin: '0 auto',
         marginBottom: '50px',
     },
@@ -29,10 +30,10 @@ const css={
     },
     grid_column_circle:
     {
-        width:'50px',
+        width:'70px',
         margin:'0 auto',
         display: 'grid',
-        gridTemplateColumns: '10px 10px 10px',
+        gridTemplateColumns: '10px 10px 10px 10px',
         gridGap:'8px',
     },
     letschat_button:
@@ -59,6 +60,7 @@ const css={
         marginTop:'30px',
         textAlign: 'center',
         transition: 'all ease 0.08s',
+        cursor: 'pointer',
     },
 }
 const SelectImage=()=>
@@ -74,7 +76,7 @@ const SelectImage=()=>
     e.preventDefault();
     setsx(e.pageX)
     setIsDrag(true);
-    setStartX(e.pageX + scrollRef.current.scrollLeft);
+    setStartX(e.screenX + scrollRef.current.scrollLeft);
   };
 
   const onDragEnd = (e) => {
@@ -83,7 +85,7 @@ const SelectImage=()=>
     setgap(startX-e.pageX)
     const endX=scrollRef.current.scrollLeft
     console.log(d)
-    if(d<0)
+    if(d<0 && selected_num>1)
     {
         setselected_num(selected_num-1)
     }
@@ -97,7 +99,7 @@ const SelectImage=()=>
   const onDragMove = (e) => {
     if (isDrag) {
         const { scrollWidth, clientWidth, scrollLeft } = scrollRef.current;
-       scrollRef.current.scrollLeft = startX - e.pageX;
+       scrollRef.current.scrollLeft = startX - e.screenX;
        if (scrollLeft === 0) {
         setStartX(e.pageX);
       } else if (scrollWidth <= clientWidth + scrollLeft) {
@@ -122,9 +124,9 @@ const SelectImage=()=>
             >
                 <div style={{
                                 display: 'grid',
-                                gridTemplateColumns: '1fr 1fr 1fr',
-                                transform: 'translateX('+(-220+gap+(-800)*(selected_num-2))+'px)',
-                                transition: 'all ease 0.6s',
+                                gridTemplateColumns: '1fr 1fr 1fr 1fr 100px',
+                                transform: 'translateX('+(-300+gap+(-800)*(selected_num-2))+'px)',
+                                transition: 'all ease 0.5s',
                             }}>
                     {type.map((t)=>{
                         return(<OurImage type={t}></OurImage>)
@@ -144,14 +146,18 @@ const SelectImage=()=>
            
 
         {/* let's chat */}
+        <Link to="/main" style={{textDecoration: 'none' }}>
         <div style={ishover? css.letschat_button_hover: css.letschat_button }
         onMouseEnter={()=>{setishover(1)}}
         onMouseLeave={()=>{setishover(0)}}>
+            
             <div style={{marginTop:'20px',
      }}>
                 Let's Chat!
             </div>
+            
             </div>
+            </Link>
             <div style={{marginTop:'10px'}}></div>
         </div>
     )
