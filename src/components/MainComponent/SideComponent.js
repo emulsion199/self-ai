@@ -14,7 +14,7 @@ const SideComponent=()=>
     }
         return(
     <div style={css.bg}>
-        <Question type = {'joel'}></Question>
+        <Question type = {'Joel'}></Question>
         <AudioRecord></AudioRecord>
         <TypeComponent></TypeComponent>
     </div>
