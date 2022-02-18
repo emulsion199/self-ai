@@ -3,17 +3,17 @@ const LeaveButton=()=>
     return(
     <div
     style={{
-        height:'53px',
-        width:'193px',
+        height:'5%',
+        width:'12%',
         border:'1px solid white',
         color:'white',
         textAlign:'center',
-        marginTop:'20px',
-        marginLeft:'20px',
+        marginTop:'3%',
+        marginLeft:'3%',
     }}>
         <div style={{
-            marginTop:'10px',
-            fontSize:'28px',
+            marginTop:'5%',
+            fontSize:'120%',
         }}>
         Leave Chat
         </div>
