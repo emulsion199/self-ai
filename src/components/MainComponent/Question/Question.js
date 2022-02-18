@@ -16,7 +16,7 @@ const Question=(args)=>
         <div>
             <div style={{
                 paddingTop:'15%',
-                marginLeft:'5%',
+                marginLeft:'8%',
                 width:'300px',
                 height:'50px',
                 border: '0px solid black',

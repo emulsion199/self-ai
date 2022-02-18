@@ -142,17 +142,20 @@ const AudioRecord = (port) => {
     <div
  
 >
-      <div
-      style={{height:'50px',
-      filter:'invert('+onRec*100+'%)',
-      opacity:100-onRec*40+'%',
-    backgroundColor:'rgba(255,255,255,1)',
-    width:'50px',
-    borderRadius:'100px',
-    color:'white',
-    margin:'0 auto',
-    transition: 'all ease 0.2s',
-}}
+      <div style={{
+        position:'absolute',
+        bottom:'13%',
+        right:'10.3%',
+        height:'50px',
+        filter:'invert('+onRec*100+'%)',
+        opacity:100-onRec*40+'%',
+        backgroundColor:'rgba(255,255,255,1)',
+        width:'50px',
+        borderRadius:'100px',
+        color:'white',
+        margin:'0 auto',
+        transition: 'all ease 0.2s',
+      }}
       onClick={onRec ? onRecAudio : offRecAudio}>
       
         <img src={require('../../image/mic.png').default}

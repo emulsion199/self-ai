@@ -17,16 +17,18 @@ const TypeComponent=()=>
     return(
         <div
         style={{
+            position:'absolute',
+            bottom:'4%',
+            right:'1.7%',
             display:'grid',
             gridTemplateColumns:'1fr 0.2fr',
-            marginLeft:'25px',
             background:'rgba(0,0,0,0.5)',
-            width:'300px',
-            height:'50px',
+            width:'20%',
+            height:'45px',
             border: '0px solid black',
             borderRadius: '100px',
             paddingLeft:'20px',
-            color:'white'
+            color:'white',
         }}>
             <input 
             onKeyPress={(e)=>{if(e.key=='Enter'){sendMessage()}}}
@@ -37,14 +39,14 @@ const TypeComponent=()=>
                 backgroundColor:'rgba(0,0,0,0)',
                 border:'0px solid black',
                 color:'white',
-                fontSize:'20px',
+                fontSize:'15px',
             }}>
             </input>
             
             <div 
             onClick={sendMessage}
             style={{
-            marginTop:'15px',
+            marginTop:'14px',
             marginRight:'20px',   
         }}>
             SEND
