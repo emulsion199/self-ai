@@ -4,7 +4,6 @@ const css={
         bottom:'0%',
         left:'15%',
         height:'80%',
-        width:'45%',
         display:'block',
         marginLeft: 'auto',
         marginRight: 'auto'
