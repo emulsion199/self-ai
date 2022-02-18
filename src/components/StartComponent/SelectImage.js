@@ -1,11 +1,8 @@
 import {useState,useEffect,useRef} from 'react'
 import OurImage from './OurImage'
 import { Link } from 'react-router-dom'
-<<<<<<< HEAD
 import './link.css'
-=======
 
->>>>>>> 3a8bb726b6dc2599aaf9df26f326a6f6ba95d8e6
 const type=[1,2,3,4]
 const css={
     real_display:
