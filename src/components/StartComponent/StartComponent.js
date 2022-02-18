@@ -2,6 +2,7 @@ import {useEffect,useState} from 'react'
 import Welcome from './Welcome' 
 import Select from './Select'
 
+
 const StartComponent=()=>
 {
   const [page,setpage]=useState(0)
@@ -21,7 +22,6 @@ const StartComponent=()=>
       setpage(1);
       return;
     }
-    
   };
     return(
       

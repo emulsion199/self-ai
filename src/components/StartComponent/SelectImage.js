@@ -1,15 +1,19 @@
 import {useState,useEffect,useRef} from 'react'
 import OurImage from './OurImage'
 import { Link } from 'react-router-dom'
+<<<<<<< HEAD
 import './link.css'
+=======
+
+>>>>>>> 3a8bb726b6dc2599aaf9df26f326a6f6ba95d8e6
 const type=[1,2,3,4]
 const css={
     real_display:
-    {
+    {   
         overflowX:'hidden',
         width:'100%',
         margin: '0 auto',
-        marginBottom: '50px',
+        marginBottom: '5%',
     },
    
     unselected_circle:
@@ -27,38 +31,40 @@ const css={
         background:'gray',
         borderRadius: '100%',
         transition: 'all ease 0.5s',
-
     },
     grid_column_circle:
     {
-        width:'70px',
+        width:'5%',
         margin:'0 auto',
         display: 'grid',
-        gridTemplateColumns: '10px 10px 10px 10px',
-        gridGap:'8px',
+        gridTemplateColumns: '1fr 1fr 1fr 1fr',
+        gridGap:'10%',
     },
     letschat_button:
     {
         background: 'white',
-        width:'256px',
-        height:'64px',
-        fontSize: '20px',
+        color:'black',
+        width:'9%',
+        height:'20%',
+        fontWeight:'bold',
+        fontSize: '110%',
         border: '1px solid black',
         margin: '0 auto',
-        marginTop:'30px',
+        marginTop:'3%',
         textAlign: 'center',
         transition: 'all ease 0.08s',
     },
     letschat_button_hover:
     {
         background: 'rgb(60,60,60)',
-        width:'256px',
-        height:'64px',
-        fontSize: '20px',
+        width:'9%',
+        height:'20%',
+        fontSize: '110%',
+        fontWeight:'bold',
         color: 'white',
         border: '1px solid rgb(60,60,60)',
         margin: '0 auto',
-        marginTop:'30px',
+        marginTop:'3%',
         textAlign: 'center',
         transition: 'all ease 0.08s',
         cursor: 'pointer',
@@ -126,7 +132,8 @@ const SelectImage=()=>
                 <div style={{
                                 display: 'grid',
                                 gridTemplateColumns: '1fr 1fr 1fr 1fr 100px',
-                                transform: 'translateX('+(-300+gap+(-800)*(selected_num-2))+'px)',
+                                gridGap:'11%',
+                                transform: 'translateX('+(gap+(-22.5)*(selected_num-2))+'%)',
                                 transition: 'all ease 0.5s',
                             }}>
                     {type.map((t)=>{
@@ -152,14 +159,13 @@ const SelectImage=()=>
         onMouseEnter={()=>{setishover(1)}}
         onMouseLeave={()=>{setishover(0)}}>
             
-            <div style={{marginTop:'20px',
-     }}>
+            <div style={{marginTop:'10%', marginBottom:'10%'}}>
                 Let's Chat!
             </div>
             
             </div>
             </Link>
-            <div style={{marginTop:'10px'}}></div>
+            <div style={{marginTop:'5%'}}></div>
         </div>
     )
 }
