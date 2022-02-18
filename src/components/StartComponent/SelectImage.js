@@ -134,7 +134,7 @@ const SelectImage=()=>
                                 display: 'grid',
                                 gridTemplateColumns: '1fr 1fr 1fr 1fr',
                                 gridGap:'10%',
-                                transform: 'translateX('+(-220+gap+(-800)*(selected_num-2))+'px)',
+                                transform: 'translateX('+(-350+gap+(-940)*(selected_num-2))+'px)',
                                 transition: 'all ease 0.5s',
                             }}>
                     {type.map((t)=>{
