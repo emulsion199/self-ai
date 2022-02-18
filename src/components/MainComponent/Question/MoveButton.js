@@ -1,5 +1,7 @@
-const MoveButton=()=>
-{
-    return('MoveButton')
+const MoveButton=(args)=>{
+    const question = args.question
+    {
+        return('MoveButton')
+    }
 }
 export default MoveButton
