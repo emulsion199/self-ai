@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const type=[1,2,3,4]
 const css={
     real_display:
-    {
+    {   
         overflowX:'hidden',
         width:'100%',
         margin: '0 auto',
@@ -128,7 +128,8 @@ const SelectImage=()=>
                 <div style={{
                                 display: 'grid',
                                 gridTemplateColumns: '1fr 1fr 1fr 1fr 100px',
-                                transform: 'translateX('+(-300+gap+(-800)*(selected_num-2))+'px)',
+                                gridGap:'11%',
+                                transform: 'translateX('+(gap+(-22.5)*(selected_num-2))+'%)',
                                 transition: 'all ease 0.5s',
                             }}>
                     {type.map((t)=>{
