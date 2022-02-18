@@ -1,7 +1,19 @@
 import SendButton from "./SendButton"
 import input from './input.css'
+import {useState} from 'react'
+import axios from "axios"
+
+
 const TypeComponent=()=>
 {
+    const [ins, setins] = useState();
+    const sendMessage=()=>
+{
+    //axios.post()
+    setins("")
+
+}
+
     return(
         <div
         style={{
@@ -16,7 +28,11 @@ const TypeComponent=()=>
             paddingLeft:'20px',
             color:'white'
         }}>
-            <input placeholder='Type Something'
+            <input 
+            onKeyPress={(e)=>{if(e.key=='Enter'){sendMessage()}}}
+            onChange={(e)=>{setins(e.target.value)}}
+            value={ins}
+            placeholder='Type Something'
             className="input" style={{
                 backgroundColor:'rgba(0,0,0,0)',
                 border:'0px solid black',
@@ -24,7 +40,15 @@ const TypeComponent=()=>
                 fontSize:'20px',
             }}>
             </input>
-            <SendButton></SendButton>
+            
+            <div 
+            onClick={sendMessage}
+            style={{
+            marginTop:'15px',
+            marginRight:'20px',   
+        }}>
+            SEND
+        </div>
      
         </div>
     )

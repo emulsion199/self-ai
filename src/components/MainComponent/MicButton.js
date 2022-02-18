@@ -90,13 +90,12 @@ const AudioRecord = (port) => {
       
       var fd=new FormData()
       fd.append("audio",wavfromblob)
-      console.log(fd)
-      console.log(port)
-      axios.post(port._url+':'+port._port,fd)
+      axios.post("https://self-ai.org:8882",fd)
 
         .then(function(response) {
+            console.log(response)
           
-            store.dispatch(addTochatdata_input(response.data['input']))
+            //store.dispatch(addTochatdata_input(response.data['input']))
             store.dispatch(addTochatdata_output(response.data['output']))
             /*
             axios.get(port._url+':'+port._port+'/get_mp4',{responseType:'blob'}).then(function(response)
@@ -145,11 +144,14 @@ const AudioRecord = (port) => {
 >
       <div
       style={{height:'50px',
+      filter:'invert('+onRec*100+'%)',
+      opacity:100-onRec*40+'%',
     backgroundColor:'rgba(255,255,255,1)',
     width:'50px',
     borderRadius:'100px',
     color:'white',
     margin:'0 auto',
+    transition: 'all ease 0.2s',
 }}
       onClick={onRec ? onRecAudio : offRecAudio}>
       

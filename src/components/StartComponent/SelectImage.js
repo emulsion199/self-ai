@@ -1,6 +1,7 @@
 import {useState,useEffect,useRef} from 'react'
 import OurImage from './OurImage'
 import { Link } from 'react-router-dom'
+import './link.css'
 const type=[1,2,3,4]
 const css={
     real_display:
@@ -146,7 +147,7 @@ const SelectImage=()=>
            
 
         {/* let's chat */}
-        <Link to="/main" style={{textDecoration: 'none' }}>
+        <Link className="link" to="/main" style={{textDecoration: 'none' }}>
         <div style={ishover? css.letschat_button_hover: css.letschat_button }
         onMouseEnter={()=>{setishover(1)}}
         onMouseLeave={()=>{setishover(0)}}>

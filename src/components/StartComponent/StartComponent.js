@@ -26,11 +26,12 @@ const StartComponent=()=>
     return(
       
       <div style={{
+        //height:'100.1vh',
         height:'100%',
         overflowY:'hidden',
         }}>
           <div style={{
-            transform: 'translateY('+(-630)*(page)+'px)',
+            transform: 'translateY('+(-800)*(page)+'px)',
             transition: 'all ease 0.4s',
           }}>
             

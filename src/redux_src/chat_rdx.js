@@ -26,7 +26,7 @@ export function setImageNum(idx) {
 }
 const initialState={
     video:'0',
-    chat:[[0,'example input'],[1,'example output']],
+    chat:'example',
     image:1,
     
 }
@@ -35,12 +35,12 @@ export default function reducer(state = initialState, action) {
     case 'ADD_CHAT_INPUT':
       return {
         ...state,
-          chat:state.chat.concat([[0,action.text]]),
+          chat:action.text,
       }
       case 'ADD_CHAT_OUTPUT':
       return {
         ...state,
-          chat:state.chat.concat([[1,action.text]])
+          chat:action.text,
       }
       case 'ADD_VIDEO':
       return {
