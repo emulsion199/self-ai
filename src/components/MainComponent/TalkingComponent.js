@@ -1,5 +1,6 @@
 import CCButton from './CCButton'
 import LeaveButton from './LeaveButton'
+import Image from './Image'
 const TalkingComponent=()=>
 {
     const css=
@@ -14,6 +15,7 @@ const TalkingComponent=()=>
         return(
     <div style={css.bg}>
         <LeaveButton></LeaveButton>
+        <Image type = {'joel'}></Image>
         <CCButton></CCButton>
     </div>
         )

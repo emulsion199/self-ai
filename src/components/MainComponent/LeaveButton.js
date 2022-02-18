@@ -3,8 +3,8 @@ const LeaveButton=()=>
     return(
     <div
     style={{
-        height:'5%',
-        width:'12%',
+        height:'40px',
+        width:'140px',
         border:'1px solid white',
         color:'white',
         textAlign:'center',
@@ -13,7 +13,7 @@ const LeaveButton=()=>
     }}>
         <div style={{
             marginTop:'5%',
-            fontSize:'120%',
+            fontSize:'20px',
         }}>
         Leave Chat
         </div>
