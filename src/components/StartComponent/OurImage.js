@@ -3,10 +3,10 @@ const name=[
     "","Joel","Changho","Jaewon","Dongju"
 ]
 const role=[
-    "",'AI developer','AI developer','AI developer','AI developer'
+    "",'AI developer','AI developer','AI developer','Designer'
 ]
 const desc=[
-    '',
+    'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet sint se',
     'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet sint se',
     'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet sint se',
     'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet sint se',
@@ -49,8 +49,6 @@ const OurImage=(args)=>
     const type= args.type
     return(
         <div>
-       
- 
                 <div>
                     {/*<div style={css.ellipse}> </div>*/}
                     <img style={css.image} src={require('../../image/'+type+'_temp.png').default}></img>
