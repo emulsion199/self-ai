@@ -29,6 +29,11 @@ const css={
         borderRadius: '100%',
         transition: 'all ease 0.5s',
     },
+    grid_person:
+    {
+        display:'grid',
+        gridTemplateColumns: '1fr 1fr 1fr 1fr',
+    },
     grid_column_circle:
     {
         width:'5%',
@@ -87,8 +92,8 @@ const SelectImage=()=>
     setIsDrag(false);
     const d=sx-e.pageX
     setgap(startX-e.pageX)
+    console.log(startX, e.pageX, gap)
     const endX=scrollRef.current.scrollLeft
-    console.log(d)
     if(d<0 && selected_num>1)
     {
         setselected_num(selected_num-1)
@@ -124,13 +129,12 @@ const SelectImage=()=>
                     onMouseUp={onDragEnd}
            
             ref={scrollRef} style={css.real_display}
-            
             >
                 <div style={{
                                 display: 'grid',
-                                gridTemplateColumns: '1fr 1fr 1fr 1fr 100px',
-                                gridGap:'11%',
-                                transform: 'translateX('+(gap+(-22.5)*(selected_num-2))+'%)',
+                                gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                                gridGap:'10%',
+                                transform: 'translateX('+(-220+gap+(-800)*(selected_num-2))+'px)',
                                 transition: 'all ease 0.5s',
                             }}>
                     {type.map((t)=>{
