@@ -1,5 +1,5 @@
 const QuestionBalloon=()=>
 {
-    return('QuestionBalloon')
+    return('')
 }
 export default QuestionBalloon
