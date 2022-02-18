@@ -45,19 +45,19 @@ const CCButton=()=>
             position:'absolute',
             bottom:'0%',
             opacity:clicked,
-            left:500-chat.length*5.5+'px',
+            left: 37 - chat.length/2 + chat.length*0.11 +'%',
             marginBottom:'2.2%',
             width:'auto',
             height:'50px',
             background:'rgba(0,0,0,0.7)',
             color:'white',
-            fontSize:'25px',
+            fontSize:'150%',
         }}>
             <div
             style={{
                 paddingLeft:'10px',
                 marginRight:'10px',
-                paddingTop:'6%',
+                paddingTop:'10px',
             }}>
             {chat}
             </div>

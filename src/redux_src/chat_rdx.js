@@ -26,7 +26,7 @@ export function setImageNum(idx) {
 }
 const initialState={
     video:'0',
-    chat:'example',
+    chat:'My name is Joel',
     image:1,
     
 }
