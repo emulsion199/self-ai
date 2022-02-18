@@ -15,7 +15,7 @@ const css={
     line:{
         textAlign: 'center',
         margin : '0 auto',
-        marginBottom: '60%'
+        marginBottom: '25%'
     }
 }
 const Welcome=()=>

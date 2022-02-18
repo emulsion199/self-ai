@@ -6,6 +6,7 @@ import Select from './Select'
 const StartComponent=()=>
 {
   const [page,setpage]=useState(0)
+  const [sh,setsh]=useState(0)
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -14,7 +15,8 @@ const StartComponent=()=>
   }, [page]);
 
   const handleScroll = () => {
-    console.log(window.scrollY)
+    setsh(window.screen.height)
+    
     if (window.scrollY == 0 && page==1) {
       setpage(0);
       return;
@@ -32,7 +34,7 @@ const StartComponent=()=>
         overflowY:'hidden',
         }}>
           <div style={{
-            transform: 'translateY('+(-1300)*(page)+'px)',
+            transform: 'translateY('+(-sh)*(page)+'px)',
             transition: 'all ease 0.4s',
           }}>
             
