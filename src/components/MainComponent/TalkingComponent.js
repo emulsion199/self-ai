@@ -18,7 +18,7 @@ const TalkingComponent=()=>
         }
         return(
     <div style={css.bg}>
-        <a href='http://localhost:3000/#location123' style={css.link}>
+        <a href='http://localhost:3000/' style={css.link}>
             <LeaveButton></LeaveButton>
         </a> 
         <Image type = {'joel'}></Image>
