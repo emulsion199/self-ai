@@ -4,7 +4,7 @@ import Welcome from './Welcome'
 const css={
   top:{
     borderBottom:'0.15rem solid',
-    paddingBottom:'4%'
+    paddingBottom:'4%',
   },
   bottom:{
     display:'grid',
@@ -29,6 +29,7 @@ const css={
 }
 const StartComponent=()=>
 {
+    const [ishover,setishover]= useState(0)
     return(
       
       <div style={{
