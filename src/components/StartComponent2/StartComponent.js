@@ -1,6 +1,6 @@
 import {useEffect,useState} from 'react'
 import Welcome from './Welcome' 
-
+import { Link } from 'react-router-dom'
 const css={
   top:{
     borderBottom:'0.15rem solid',
@@ -11,9 +11,11 @@ const css={
     gridTemplateColumns: '1fr 1fr 1fr 1fr',
   },
   imageCard:{
+    position:'relative',
     borderRight:'0.15rem solid'
   },
   image:{
+    position:'relative',
     width:'90%',
     display: 'block',
     marginLeft: 'auto',
@@ -28,6 +30,7 @@ const css={
   },
   black:
   {
+    position:'relative',
     background:'rgba(0,0,0,0)',
     opacity:'0',
     width:'100%',
@@ -39,6 +42,7 @@ const css={
   },
   black_hovered:
   {
+    position:'relative',
     background:'rgba(0,0,0,0.7)',
     width:'100%',
     height:'452px',
@@ -48,34 +52,49 @@ const css={
   },
   title:
   {
-    marginTop:'250px',
-    marginLeft:'30px',
-    fontSize:'20px',
+    marginTop:'60%',
+    marginLeft:'10%',
+    fontSize:'150%',
     fontWeight:'bold',
   },
   desc:
   {
-    marginLeft:'30px',
-    paddingRight:'30px',
+    marginTop:'3%',
+    marginLeft:'10%',
+    paddingRight:'10%',
     wordBreak:'break-all',
+    lineHeight:'130%'
   },
   start:
   {
-    marginTop:'20px',
-    marginLeft:'30px',
+    marginTop:'8%',
+    marginLeft:'10%',
+    textAlign:'center',
+    background:'rgb(200,200,200)',
+    width:'80%',
+    height:'7%',
+    color:'black',
+    paddingTop:'3%',
+    fontWeight:'bold',
+    fontSize:'100%'
+  },
+  letschat_button:{
+    marginTop:'8%',
+    marginLeft:'10%',
     textAlign:'center',
     background:'white',
-    width:'300px',
-    height:'30px',
+    width:'80%',
+    height:'7%',
     color:'black',
-    paddingTop:'10px',
+    paddingTop:'3%',
     fontWeight:'bold',
-  },
-
+    fontSize:'100%'
+  }
 }
 const StartComponent=()=>
 {
     const [ishover,setishover]= useState(0)
+    const [chat, setischat] = useState(0)
     return(
       
       <div style={{
@@ -83,6 +102,7 @@ const StartComponent=()=>
         overflowY:'hidden',
         display:'grid',
         gridTemplateRows: '1fr 2fr',
+        position:'absolute'
         }}>  
         <div style={css.top}>
           <Welcome></Welcome>
@@ -108,32 +128,47 @@ const StartComponent=()=>
           <div style={ishover==1? css.black_hovered:css.black} onMouseOver={()=>{setishover(1)}} onMouseOut={()=>{setishover(0)}}>
             <div style={css.title}> Front-end developer </div>
             <div style={css.desc}> enim velit duis enim velit duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet enim velit duis enim velienim velit duis enim.</div>
-            <div style={css.start}> Let's chat! </div>
-
-    
+            <Link className="link" to="/main" style={{textDecoration: 'none' }}>
+              <div style={chat? css.start: css.letschat_button }
+              onMouseEnter={()=>{setischat(1)}}
+              onMouseLeave={()=>{setischat(0)}}>
+                      Let's Chat!
+                  </div>
+            </Link>
           </div>
           <div style={ishover==2? css.black_hovered:css.black} onMouseOver={()=>{setishover(2)}}onMouseOut={()=>{setishover(0)}}>
           <div style={css.title}> Front-end developer </div>
             <div style={css.desc}> enim velit duis enim velit duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet enim velit duis enim velienim velit duis enim.</div>
-            <div style={css.start}> Let's chat! </div>
-            
-
-
+            <Link className="link" to="/main" style={{textDecoration: 'none' }}>
+              <div style={chat? css.start: css.letschat_button }
+              onMouseEnter={()=>{setischat(1)}}
+              onMouseLeave={()=>{setischat(0)}}>
+                      Let's Chat!
+                  </div>
+            </Link>
           </div>
           <div style={ishover==3? css.black_hovered:css.black} onMouseOver={()=>{setishover(3)}}onMouseOut={()=>{setishover(0)}}>
           <div style={css.title}> Front-end developer </div>
             <div style={css.desc}> enim velit duis enim velit duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet enim velit duis enim velienim velit duis enim.</div>
-            <div style={css.start}> Let's chat! </div>
-
-
+            <Link className="link" to="/main" style={{textDecoration: 'none' }}>
+              <div style={chat? css.start: css.letschat_button }
+              onMouseEnter={()=>{setischat(1)}}
+              onMouseLeave={()=>{setischat(0)}}>
+                      Let's Chat!
+                  </div>
+            </Link>
           </div>
             <div style = {ishover==4? css.black_hovered:css.black} onMouseOver={()=>{setishover(4)}}onMouseOut={()=>{setishover(0)}}>
             <div style={css.title}> Front-end developer </div>
             <div style={css.desc}> enim velit duis enim velit duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet enim velit duis enim velienim velit duis enim.</div>
-            <div style={css.start}> Let's chat! </div>
+            <Link className="link" to="/main" style={{textDecoration: 'none' }}>
+              <div style={chat? css.start: css.letschat_button }
+              onMouseEnter={()=>{setischat(1)}}
+              onMouseLeave={()=>{setischat(0)}}>
+                      Let's Chat!
+                  </div>
+            </Link>
             </div>
-            
- 
           </div>
         </div>
       </div>
