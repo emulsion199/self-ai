@@ -69,9 +69,9 @@ black:
     width:'80%',
     height:'7%',
     color:'black',
-    paddingTop:'1%',
+    paddingTop:'3%',
     fontWeight:'bold',
-    fontSize:'100%'
+    fontSize:'1.1vw'
   },
   letschat_button:{
     marginTop:'8%',
@@ -81,9 +81,9 @@ black:
     width:'80%',
     height:'7%',
     color:'black',
-    paddingTop:'5%',
+    paddingTop:'3%',
     fontWeight:'bold',
-    fontSize:'100%'
+    fontSize:'1.1vw'
   },
 }
 const Card=(args)=>

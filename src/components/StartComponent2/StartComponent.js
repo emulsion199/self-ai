@@ -5,12 +5,15 @@ import Card from './Card'
 import { map } from 'lodash'
 const css={
   top:{
-    borderBottom:'0.15rem solid',
+    
     paddingBottom:'4%',
   },
   bottom:{
+    borderTop:'0.15rem solid',
+    position:'absolute',
+    bottom:'0px',
     display:'grid',
-    gridTemplateColumns: 'repeat(4,25%)'
+    gridTemplateColumns: 'repeat(4,minmax(200px,25%))'
   },
 }
 const human=[
@@ -26,10 +29,7 @@ const StartComponent=()=>
     return(
       
       <div style={{
-        overflowY:'hidden',
-        display:'grid',
-        position:'absolute',
-        height:'fill',
+
         }}>  
         <div style={css.top}>
           <Welcome></Welcome>
