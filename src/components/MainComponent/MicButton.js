@@ -5,25 +5,21 @@ import ReactPlayer from 'react-player'
 import axios from 'axios'
 import store from '../../index'
 import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../../redux_src/chat_rdx";
-import connect from 'react-redux'
+import { connect,useSelector } from 'react-redux'
+import ReactAudioPlayer from "react-audio-player";
 
-const mapStateToProps = (state) => {
-    return state
-  };
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      addTochatdata_input: () => {
-        dispatch(addTochatdata_input);
-      },
-      addTochatdata_output: () => {
-        dispatch(addTochatdata_output);
-      },
-      addVideo: () => {
-        dispatch(addVideo);
-      }
-    };
-  };
+const mapStateToProps = state => ({
+  chat: state.chat,
+  video: state.video,
+  image: state.image
+});
+
+const mapDispatchToProps = {
+  addTochatdata_input,
+  addTochatdata_output,
+  addVideo,
+  setImageNum,
+};
 const AudioRecord = (port) => {
   const [stream, setStream] = useState();
   const [media, setMedia] = useState();
@@ -97,19 +93,16 @@ const AudioRecord = (port) => {
           
             //store.dispatch(addTochatdata_input(response.data['input']))
             store.dispatch(addTochatdata_output(response.data['output']))
-            /*
-            axios.get(port._url+':'+port._port+'/get_mp4',{responseType:'blob'}).then(function(response)
+            
+            axios.get("https://self-ai.org:8882/get_mp3",{responseType:'blob'}).then(function(response)
 
             {
               console.log(response.data)
-              //console.log(window.URL.createObjectURL(vid))
+              console.log(URL.createObjectURL(response.data))
   
-               
-               
-               // console.log(result);
                 store.dispatch(addVideo(URL.createObjectURL(response.data)))
              
-            })*/
+            })
         }
         )
         .catch(function(error) {
@@ -142,6 +135,11 @@ const AudioRecord = (port) => {
     <div
  
 >
+<ReactAudioPlayer
+src={store.getState()['video']}
+autoPlay={true}
+
+/>
       <div style={{
         position:'absolute',
         bottom:'13%',
@@ -182,4 +180,4 @@ const AudioRecord = (port) => {
   );
 };
 
-export default AudioRecord;
+export default connect(mapStateToProps,mapDispatchToProps)(AudioRecord);
