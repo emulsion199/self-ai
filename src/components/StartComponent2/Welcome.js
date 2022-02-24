@@ -10,16 +10,18 @@ const css={
         marginTop:'9%',
     },
     second_frame:{
-        marginLeft:'20%',
-        marginTop:'17%',
-        marginRight:'10%'
+        marginLeft:'8%',
+        marginTop:'8%',
+        marginRight:'8%'
     },
     title:{
         fontSize: '350%',   
     },
     subtitle:{
-        fontSize: '100%',
         marginTop: '3%',
+    },
+    sentence:{
+        fontSize:'100%'
     },
     name:{
         marginBottom:'-10%',
@@ -44,11 +46,12 @@ const Welcome=()=>
             </div>
             <div style={css.second_frame}>
                 <div style={css.subtitle}>
-                    We believe Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. lit non deserunt lor do amet.
+                    <div style={css.sentence}>Imagine if you can extend and control your existence to the digital world.</div>
+                    <div style={css.sentence}>Imagine if you can have full control of your digital clone's interaction.</div> 
+                    <div style={css.sentence}>Imagine the numerous possibilities such as virtual interviews for prospective employers or virtual blind dates for prospective mates.</div>
                 </div>
                 <div style={css.subtitle}>
-                    Velit officia consequat duis enim velit duis enim velit duis enim velit mollit velit ollivelit molli veli. 
-                </div>
+                    Welcome to Self-AI. Our vision is to allow people to have a complete control over ones digital presence. Come talk to the digital clones of the founding members where the AI model has been trained to replicate the voice, personality, and personal knowledge (Demo still under working progress).                </div>
             </div>
         </div>
     )

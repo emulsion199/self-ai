@@ -105,17 +105,20 @@ const Card=(args)=>
 {
     const [ishover,setishover]= useState(0)
     const [chat, setischat] = useState(0)
-    const name=args.name
+    const name = args.name[0]
+    const num = args.name[1]
+    const job = args.name[2]
+    const description = args.name[3]
     return(
         <div style={{position:'relative'
         }}>
         <div style={css.imageCard}>
-            <img style = {css.image} src={require('../../image/1_temp.png').default}></img>
+            <img style = {css.image} src={require('../../image/'+num+'_temp.png').default}></img>
             <div style={css.name}>{name}</div>
           </div>
           <div style={ishover==1? css.black_hovered:css.black} onMouseOver={()=>{setishover(1)}} onMouseOut={()=>{setishover(0)}}>
-            <div style={css.title}> Front-end developer </div>
-            <div style={css.desc}> enim velit duis enim velit duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet enim velit duis enim velienim velit duis enim.</div>
+            <div style={css.title}> {job} </div>
+            <div style={css.desc}> {description} </div>
             <Link className="link" to={"/"+name} style={{textDecoration: 'none' }}>
               <div style={chat? css.start: css.letschat_button }
               onClick={()=>{store.dispatch(setImageNum(name))}}

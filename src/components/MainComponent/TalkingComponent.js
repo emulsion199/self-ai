@@ -1,7 +1,22 @@
 import CCButton from './CCButton'
 import LeaveButton from './LeaveButton'
 import Image from './Image'
+import store from '../../index'
+import { connect,useSelector } from 'react-redux'
+import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../../redux_src/chat_rdx";
 
+const mapStateToProps = state => ({
+    chat: state.chat,
+    video: state.video,
+    image: state.image
+  });
+  
+  const mapDispatchToProps = {
+    addTochatdata_input,
+    addTochatdata_output,
+    addVideo,
+    setImageNum,
+  };
 const TalkingComponent=()=>
 {
     const css=
@@ -21,9 +36,9 @@ const TalkingComponent=()=>
         <a href='http://localhost:3000/' style={css.link}>
             <LeaveButton></LeaveButton>
         </a> 
-        <Image type = {'joel'}></Image>
+        <Image type = {store.getState()['image']}></Image>
         <CCButton></CCButton>
     </div>
         )
 }
-export default TalkingComponent
+export default connect(mapStateToProps,mapDispatchToProps)(TalkingComponent)

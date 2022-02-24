@@ -8,16 +8,15 @@ const question_list=
     'Who is your favorite artist?',
     'What is your favorite brand?',
     'What would you bring to a deserted island?',
-    'How do you relieve stress?',
-    'What is your favorite sport?',
-    'What do you do for fun?',
-    'Who is your favorite artist?',
-    'What is your favorite brand?',
-    'What would you bring to a deserted island?',
-    'How do you relieve stress?',
-    'What is your favorite sport?',
-    'What do you do for fun?',
-    'Who is your favorite artist?'
+    'What is your favorite food?',
+    'What do you want to do in the weekend?',
+    'Do you love music?',
+    'What is your interest these days?',
+    'Do you love coffee?',
+    'Which season do you like?',
+    'Do you like rainy day?',
+    'Do you play instruments?',
+    'What is your dream?',
 ]
 const a = '<'
 const b = '>'

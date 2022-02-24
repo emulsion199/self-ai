@@ -17,10 +17,10 @@ const css={
   },
 }
 const human=[
-  {name: 'joel'},
-  {name: 'changho'},
-  {name: 'jaewon'},
-  {name: 'dongju'}
+  {name: ['Joel', '1', 'PM, AI Developer', 'I majored computer science....runt lor do amet enim velit duis enim velienim velit duis duis duis duis duis enim.']},
+  {name: ['Changho', '2', 'Back-end Developer', 'I majored computer science....runt lor do amet enim velit duis enim velienim velit duis duis duis duis duis enim.']},
+  {name: ['Jaewon', '3', 'Front-end Developer', 'I majored computer science....runt lor do amet enim velit duis enim velienim velit duis duis duis duis duis enim.']},
+  {name: ['Dongju', '4', 'UI/UX Designer', 'I majored design in university.. enim velit duis enim ollivelit molli veli. lit non deserunt lvelit duis enim.']}
 ]
 const StartComponent=()=>
 {
