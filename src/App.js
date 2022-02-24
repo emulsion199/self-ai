@@ -9,7 +9,10 @@ const App=()=>
     return(
       <div>
         <Route path="/" render={(props) => <StartComponent port={8883} url={"https://self-ai.org"}></StartComponent>} exact/>
-        <Route path="/main" render={(props) => <MainComponent port={8882} url={"https://self-ai.org"}></MainComponent>} exact/>
+        <Route path="/joel" render={(props) => <MainComponent port={8882} url={"https://self-ai.org"}></MainComponent>} exact/>
+        <Route path="/changho" render={(props) => <MainComponent port={8882} url={"https://self-ai.org"}></MainComponent>} exact/>
+        <Route path="/jaewon" render={(props) => <MainComponent port={8882} url={"https://self-ai.org"}></MainComponent>} exact/>
+        <Route path="/dongju" render={(props) => <MainComponent port={8882} url={"https://self-ai.org"}></MainComponent>} exact/>
       </div>
     )
   

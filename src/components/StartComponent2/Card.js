@@ -1,5 +1,20 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
+import store from '../../index'
+import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../../redux_src/chat_rdx";
+import { connect,useSelector } from 'react-redux'
+const mapStateToProps = state => ({
+    chat: state.chat,
+    video: state.video,
+    image: state.image
+  });
+  
+  const mapDispatchToProps = {
+    addTochatdata_input,
+    addTochatdata_output,
+    addVideo,
+    setImageNum,
+  };
 const css=
 {
     imageCard:{
@@ -101,8 +116,9 @@ const Card=(args)=>
           <div style={ishover==1? css.black_hovered:css.black} onMouseOver={()=>{setishover(1)}} onMouseOut={()=>{setishover(0)}}>
             <div style={css.title}> Front-end developer </div>
             <div style={css.desc}> enim velit duis enim velit duis enim velit mollit velit ollivelit molli veli. lit non deserunt lor do amet enim velit duis enim velienim velit duis enim.</div>
-            <Link className="link" to="/main" style={{textDecoration: 'none' }}>
+            <Link className="link" to={"/"+name} style={{textDecoration: 'none' }}>
               <div style={chat? css.start: css.letschat_button }
+              onClick={()=>{store.dispatch(setImageNum(name))}}
               onMouseEnter={()=>{setischat(1)}}
               onMouseLeave={()=>{setischat(0)}}>
                       Let's Chat!
@@ -112,4 +128,4 @@ const Card=(args)=>
           </div>
     )
 }
-export default Card
+export default connect(mapStateToProps,mapDispatchToProps)(Card)
