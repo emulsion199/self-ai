@@ -19,23 +19,22 @@ const css=
 {
     imageCard:{
         position:'relative',
-        borderRight:'0.15rem solid'
       },
       image:{
         position:'relative',
-        width:'100%',
+        width:'80%',
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop:'0%'
+        paddingTop:'10%'
       },
       name:{
         fontSize:'3vw',
         fontWeight:'400',
         textAlign : 'center',
-        marginTop:'2%'
+        marginTop:'2%',
       },
-black:
+  black:
   {
     position:'absolute',
     background:'rgba(0,0,0,0)',
@@ -110,7 +109,7 @@ const Card=(args)=>
     const job = args.name[2]
     const description = args.name[3]
     return(
-        <div style={{position:'relative'
+        <div style={{position:'relative', borderRight:'0.18rem solid'
         }}>
         <div style={css.imageCard}>
             <img style = {css.image} src={require('../../image/'+num+'_temp.png').default}></img>
