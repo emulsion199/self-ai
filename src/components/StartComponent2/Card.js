@@ -17,88 +17,100 @@ const mapStateToProps = state => ({
   };
 const css=
 {
-    imageCard:{
-        position:'relative',
-      },
-      image:{
-        position:'relative',
+    image:{
+        position:'absoolute',
         width:'80%',
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',
         paddingTop:'10%'
-      },
-      name:{
-        fontSize:'3vw',
+    },
+    name:{
+        fontSize:'2.7vw',
         fontWeight:'400',
         textAlign : 'center',
-        marginTop:'2%',
-      },
-  black:
-  {
-    position:'absolute',
-    background:'rgba(0,0,0,0)',
-    opacity:'0',
-    width:'100%',
-    height:'100%',
-    top:'0px',
+        marginTop:'5vh',
+    },
+    nothing:{
+      opacity:'0%'
+    },
+    black:
+    {
+      position:'absolute',
+      background:'rgba(0,0,0,0)',
+      opacity:'0',
+      width:'100%',
+      height:'100%',
+      top:'0px',
+      transition: 'all ease 0.2s',
+      color:'white',
+    },
+    black_hovered:
+    {
+      position:'absolute',
+      background:'rgba(0,0,0,0.7)',
+      width:'100.5%',
+      height:'100%',
+      top:'0px',
+    
+      transition: 'all ease 0.2s',
+      color:'white',
+    },
+    box:
+    {
+      position:'absolute',
+      bottom:'14vh',
+    },
+    title:
+    {
+      marginLeft:'10%',
+      marginBottom:'5%',
+      fontSize:'2vw',
+      fontWeight:'bold',
+    },
+    desc:
+    {
 
-    transition: 'all ease 0.2s',
-    color:'white',
-
-  },
-  black_hovered:
-  {
-    position:'absolute',
-    background:'rgba(0,0,0,0.7)',
-    width:'100%',
-    height:'100%',
-    top:'0px',
-   
-    transition: 'all ease 0.2s',
-    color:'white',
-  },
-  title:
-  {
-    marginTop:'50%',
-    marginLeft:'10%',
-    fontSize:'2vw',
-    fontWeight:'bold',
-  },
-  desc:
-  {
-    marginTop:'3%',
-    marginLeft:'10%',
-    paddingRight:'10%',
-    wordBreak:'break-all',
-    lineHeight:'130%',
-    fontSize:'1.2vw',
-  },
-  start:
-  {
-    marginTop:'8%',
-    marginLeft:'10%',
-    textAlign:'center',
-    background:'rgb(200,200,200)',
-    width:'80%',
-    height:'7%',
-    color:'black',
-    paddingTop:'3%',
-    fontWeight:'bold',
-    fontSize:'1.1vw'
-  },
-  letschat_button:{
-    marginTop:'8%',
-    marginLeft:'10%',
-    textAlign:'center',
-    background:'white',
-    width:'80%',
-    height:'7%',
-    color:'black',
-    paddingTop:'3%',
-    fontWeight:'bold',
-    fontSize:'1.1vw'
-  },
+      marginTop:'3%',
+      marginLeft:'10%',
+      paddingRight:'10%',
+      wordBreak:'keep-all',
+      lineHeight:'130%',
+      fontSize:'1.2vw',
+    },
+    start:
+    {
+      position:'absolute', 
+      borderRadius:'6px',
+      bottom:'4vh',
+      marginTop:'8%',
+      marginLeft:'10%',
+      textAlign:'center',
+      lineHeight:'3vh',
+      background:'rgb(200,200,200)',
+      width:'80%',
+      height:'7%',
+      color:'black',
+      paddingTop:'3%',
+      fontWeight:'bold',
+      fontSize:'1.2vw'
+    },
+    letschat_button:{
+      position:'absolute', 
+      lineHeight:'3vh',
+      borderRadius:'6px',
+      bottom:'4vh',
+      marginTop:'8%',
+      marginLeft:'10%',
+      textAlign:'center',
+      background:'white',
+      width:'80%',
+      height:'7%',
+      color:'black',
+      paddingTop:'3%',
+      fontWeight:'bold',
+      fontSize:'1.2vw'
+    },
 }
 const Card=(args)=>
 {
@@ -109,25 +121,24 @@ const Card=(args)=>
     const job = args.name[2]
     const description = args.name[3]
     return(
-        <div style={{position:'relative', borderRight:'0.18rem solid'
-        }}>
-        <div style={css.imageCard}>
+        <div style={{position:'relative', borderRight:'0.18rem solid'}}>
             <img style = {css.image} src={require('../../image/'+num+'_temp.png').default}></img>
-            <div style={css.name}>{name}</div>
-          </div>
+            <div style={ishover==0? css.name : css.nothing}>{name}</div>
           <div style={ishover==1? css.black_hovered:css.black} onMouseOver={()=>{setishover(1)}} onMouseOut={()=>{setishover(0)}}>
+            <div style={css.box}>
             <div style={css.title}> {job} </div>
             <div style={css.desc}> {description} </div>
+            </div>
             <Link className="link" to={"/"+name} style={{textDecoration: 'none' }}>
               <div style={chat? css.start: css.letschat_button }
               onClick={()=>{store.dispatch(setImageNum(name))}}
               onMouseEnter={()=>{setischat(1)}}
               onMouseLeave={()=>{setischat(0)}}>
-                      Let's Chat!
+                      LET'S CHAT
                   </div>
             </Link>
           </div>
-          </div>
+        </div>
     )
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Card)

@@ -16,17 +16,17 @@ const css={
         marginRight:'8%'
     },
     title:{
-        fontSize: '350%',   
+        fontSize: '4vw',   
     },
     subtitle:{
         marginTop: '3%',
     },
     sentence:{
-        fontSize:'100%'
+        fontSize:'1.2vw'
     },
     name:{
         marginBottom:'-10%',
-        fontSize: '150%',
+        fontSize: '1.8vw',
         fontWeight:'400',
     }
 }
@@ -47,11 +47,13 @@ const Welcome=()=>
             </div>
             <div style={css.second_frame}>
                 <div style={css.subtitle}>
-                Welcome to Self-AI. We are digital clones of each one of our founding members. The AI Model has been trained to replicate the voice, personality, and personal knowledge. 
+                <div style={css.sentence}>
+                    Welcome to Self-AI. We are digital clones of each one of our founding members. The AI Model has been trained to replicate the voice, personality, and personal knowledge. 
+                </div>
                 </div>
                 <div style={css.subtitle}>
                     <div style={css.sentence}>Our vision is to connect the world through a virtual self. </div>
-                    <div style={css.sentence}>To learn more, start a conversation or contact us via <a href="mailto:wkddydpf@gmail.com">Email</a> .</div>
+                    <div style={css.sentence}>To learn more, start a conversation or contact us via <a href="mailto:wkddydpf@gmail.com">Email</a>.</div>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { map } from 'lodash'
 const css={
   top:{
     position:'absolute',
-    paddingBottom:'5%',
+    paddingBottom:'5%'
   },
   bottom:{
     borderTop:'0.15rem solid',
