@@ -18,9 +18,10 @@ const css={
 }
 const human=[
   {name: ['Joel', '1', 'PM, AI Developer', 'I majored computer science....runt lor do amet enim velit duis enim velienim velit duis duis duis duis duis enim.']},
-  {name: ['Changho', '2', 'Back-end Developer', 'I majored computer science....runt lor do amet enim velit duis enim velienim velit duis duis duis duis duis enim.']},
+  {name: ['Changho', '2', 'Back-end Developer', 'I am self-motivated and passionate computer programmer! These days, my interest is in AI modeling and AI researching.']},
   {name: ['Jaewon', '3', 'Front-end Developer', 'I majored computer science....runt lor do amet enim velit duis enim velienim velit duis duis duis duis duis enim.']},
   {name: ['Dongju', '4', 'UI/UX Designer', 'I majored design in university.. enim velit duis enim ollivelit molli veli. lit non deserunt lvelit duis enim.']}
+                                            
 ]
 const StartComponent=()=>
 {
