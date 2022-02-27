@@ -68,7 +68,7 @@ const CCButton=()=>
             width:'50px',
             height:'50px',
             marginBottom:'4vh', 
-            marginLeft:'2.2%',
+            left:500-chat.length*5.5+'px',
             background:'rgba(0,0,0,0.7)',
             textAlign:'center',
             color:'white',
