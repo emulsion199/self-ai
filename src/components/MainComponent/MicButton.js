@@ -4,14 +4,16 @@ import 'react-h5-audio-player/lib/styles.css';
 import ReactPlayer from 'react-player'
 import axios from 'axios'
 import store from '../../index'
-import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../../redux_src/chat_rdx";
+import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum,sethowmanytry} from "../../redux_src/chat_rdx";
 import { connect,useSelector } from 'react-redux'
 import ReactAudioPlayer from "react-audio-player";
 
 const mapStateToProps = state => ({
   chat: state.chat,
   video: state.video,
-  image: state.image
+  image: state.image,
+  try: state.try,
+
 });
 
 const mapDispatchToProps = {
@@ -19,6 +21,7 @@ const mapDispatchToProps = {
   addTochatdata_output,
   addVideo,
   setImageNum,
+  sethowmanytry,
 };
 const AudioRecord = (port) => {
   const [stream, setStream] = useState();
@@ -77,7 +80,8 @@ const AudioRecord = (port) => {
   const offRecAudio = () => {
     // dataavailable 이벤트로 Blob 데이터에 대한 응답을 받을 수 있음
     media.ondataavailable = function (e) {
-      
+      store.dispatch(sethowmanytry(store.getState()['try']+1))
+      console.log(store.getState()["try"])
       setAudioUrl(e.data);
       setOnRec(true);
       setAudio(URL.createObjectURL(e.data))
@@ -86,7 +90,9 @@ const AudioRecord = (port) => {
       
       var fd=new FormData()
       fd.append("audio",wavfromblob)
-      axios.post("https://self-ai.org:8882/setid",{"id":store.getState()["image"]})
+      axios.post("https://self-ai.org:8882/setid",{"id":store.getState()["image"],
+      "try":store.getState()["try"]
+    })
       .then(function(response){
       
       
@@ -98,8 +104,7 @@ const AudioRecord = (port) => {
             //store.dispatch(addTochatdata_input(response.data['input']))
             store.dispatch(addTochatdata_output(response.data['output']))
             
-            axios.get("https://self-ai.org:8882/get_mp3",{responseType:'blob'}).then(function(response)
-
+            axios.get(`https://self-ai.org:8882/get_mp3?timestamp=${new Date().getTime()}`,{responseType:'blob'}).then(function(response)
             {
               console.log(response.data)
               console.log(URL.createObjectURL(response.data))
@@ -144,8 +149,8 @@ autoPlay={true}
 />
       <div style={{
         position:'absolute',
-        bottom:'13%',
-        right:'10.3%',
+        bottom:'15vh',
+        right:'10.6vw',
         height:'50px',
         filter:'invert('+onRec*100+'%)',
         opacity:100-onRec*40+'%',
@@ -177,44 +182,7 @@ autoPlay={true}
          
   
     </div>
-    <div
-        style={{
-            position:'absolute',
-            bottom:'4%',
-            right:'1.7%',
-            display:'grid',
-            gridTemplateColumns:'1fr 0.2fr',
-            background:'rgba(0,0,0,0.5)',
-            width:'20%',
-            height:'45px',
-            border: '0px solid black',
-            borderRadius: '100px',
-            paddingLeft:'20px',
-            color:'white',
-        }}>
-            <input 
-            onKeyPress={(e)=>{if(e.key=='Enter'){sendMessage()}}}
-            onChange={(e)=>{setins(e.target.value)}}
-            value={ins}
-            placeholder='Type Something'
-            className="input" style={{
-                backgroundColor:'rgba(0,0,0,0)',
-                border:'0px solid black',
-                color:'white',
-                fontSize:'15px',
-            }}>
-            </input>
-            
-            <div 
-            onClick={sendMessage}
-            style={{
-            marginTop:'14px',
-            marginRight:'20px',   
-        }}>
-            SEND
-        </div>
-     
-        </div>
+    
     
       
     </div>

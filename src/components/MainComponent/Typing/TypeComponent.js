@@ -2,7 +2,7 @@ import SendButton from "./SendButton"
 import input from './input.css'
 import {useState} from 'react'
 import axios from "axios"
-
+import font from '../../font.css'
 
 const TypeComponent=()=>
 {
@@ -15,19 +15,18 @@ const TypeComponent=()=>
 }
 
     return(
+        
         <div
         style={{
             position:'absolute',
-            bottom:'4%',
-            right:'1.7%',
+            bottom:'4vh',
+            right:'2.5vw',
             display:'grid',
             gridTemplateColumns:'1fr 0.2fr',
-            background:'rgba(0,0,0,0.5)',
-            width:'20%',
-            height:'45px',
-            border: '0px solid black',
-            borderRadius: '100px',
-            paddingLeft:'20px',
+            borderBottom:'1px solid white',
+            width:'19vw',
+            height:'5vh',
+            paddingLeft:'0.5vw',
             color:'white',
         }}>
             <input 
@@ -36,22 +35,13 @@ const TypeComponent=()=>
             value={ins}
             placeholder='Type Something'
             className="input" style={{
+                fontFamily:'Roboto',
                 backgroundColor:'rgba(0,0,0,0)',
                 border:'0px solid black',
                 color:'white',
-                fontSize:'15px',
+                fontSize:'1.2vw',
             }}>
             </input>
-            
-            <div 
-            onClick={sendMessage}
-            style={{
-            marginTop:'14px',
-            marginRight:'20px',   
-        }}>
-            SEND
-        </div>
-     
         </div>
     )
 }

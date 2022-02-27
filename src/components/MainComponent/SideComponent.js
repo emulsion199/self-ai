@@ -13,15 +13,11 @@ const SideComponent=()=>
         position:'absolute',
         right:'0',
     },
-    mic:{
-        position:'absolute',
-        bottom:'15vh',
-    }
     }
         return(
     <div style={css.bg}>
         <Question type = {'Joel'}></Question>
-        <div style={css.mic}><AudioRecord></AudioRecord></div>
+        <AudioRecord></AudioRecord>
         <TypeComponent></TypeComponent>
     </div>
         )

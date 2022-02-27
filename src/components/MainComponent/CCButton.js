@@ -1,11 +1,13 @@
 import { connect,useSelector } from 'react-redux'
 import store from '../..';
-import { addTochatdata_input, addTochatdata_output,addVideo,setImageNum } from "../../redux_src/chat_rdx";
+import { addTochatdata_input, addTochatdata_output,addVideo,setImageNum,isrecord } from "../../redux_src/chat_rdx";
 import { useState } from 'react';
+
 const mapStateToProps = state => ({
     chat: state.chat,
     video: state.video,
-    image: state.image
+    image: state.image,
+    recording: state.recording
   });
   
 const mapDispatchToProps = {
@@ -13,11 +15,13 @@ const mapDispatchToProps = {
     addTochatdata_output,
     addVideo,
     setImageNum,
+    isrecord
   };
 const CCButton=()=>
 {
     const [clicked,setclicked]=useState(1)
     const chat= store.getState()['chat']
+    const record = store.getState()['recording']
     return(
         <div>
         <div onClick={()=>{clicked? setclicked(0): setclicked(1)}}
@@ -27,7 +31,7 @@ const CCButton=()=>
             left:'0%',
             width:'50px',
             height:'50px',
-            marginBottom:'2.2%', 
+            marginBottom:'4vh', 
             marginLeft:'2.2%',
             background:'rgba(0,0,0,0.7)',
             textAlign:'center',
@@ -35,26 +39,27 @@ const CCButton=()=>
         }}>
             <div style={{
                 opacity: clicked+0.6,
-                paddingTop:'30%',
+                paddingTop:'24%',
+                paddingLeft:'2%'
             }}>
-                CC
+                <img src={require('../../image/caption.png').default}></img>
             </div>
             
         </div>
         <div style={{
             position:'absolute',
-            bottom:'0%',
             opacity:clicked,
-            left: 37 - chat.length/2 + chat.length*0.11 +'%',
-            marginBottom:'2.2%',
-            width:'auto',
+            bottom:'4vh',
+            marginLeft:'8vw',
+            textAligh:'center',
             height:'50px',
             background:'rgba(0,0,0,0.7)',
             color:'white',
-            fontSize:'150%',
+            fontSize:'1.8vw',
         }}>
             <div
             style={{
+                whiteSpace:'nowrap',
                 paddingLeft:'10px',
                 marginRight:'10px',
                 paddingTop:'10px',

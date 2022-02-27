@@ -1,25 +1,27 @@
+const css={
+    image:{
+        height:'1.2vw',
+        marginTop:'0.9vh'
+    },
+    word:{
+        fontSize:'1.7vw',
+        paddingTop:'0',
+        color:'white'
+    }
+}
 const LeaveButton=()=>
 {
     return(
-    <div
-    style={{
-        position:'absolute',
-        height:'40px',
-        width:'140px',
-        border:'1px solid white',
-        color:'white',
-        textAlign:'center',
-        marginTop:'3%',
-        marginLeft:'3%',
-    }}>
         <div style={{
-            marginTop:'5%',
-            fontSize:'20px',
+            marginTop:'5vh',
+            marginLeft:'2.5vw',
+            position:'absolute',
+            display:'grid',
+            gridTemplateColumns:'1fr 4fr'
         }}>
-        Leave Chat
+        <img style={css.image} src={require('../../image/leave chat.png').default}></img>
+        <div style={css.word}>LEAVE CHAT</div>
         </div>
-       
-    </div>
     )
 }
 export default LeaveButton

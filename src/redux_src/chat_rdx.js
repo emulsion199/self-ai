@@ -24,10 +24,26 @@ export function setImageNum(idx) {
     idx
   }
 }
+export function isrecord(num)
+{
+  return{
+    type: 'IS_RECORD',
+    num
+  }
+}
+export function sethowmanytry(num)
+{
+  return{
+    type: 'HOW_TRY',
+    num
+  }
+}
 const initialState={
     video:'0',
     chat:'hey',
     image:1,
+    recording:0,
+    try:0,
     
 }
 export default function reducer(state = initialState, action) {
@@ -52,6 +68,16 @@ export default function reducer(state = initialState, action) {
         ...state,
           image:action.idx
       }
+      case "IS_REDORDING":
+        return{
+          ...state,
+          recording:action.num
+        }
+      case "HOW_TRY":
+        return{
+          ...state,
+          try:action.num
+        }
     default:
       return state
     }

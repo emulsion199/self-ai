@@ -17,7 +17,7 @@ const css={
     bottom:'0px',
     height:'60%',
     display:'grid',
-    gridTemplateColumns: 'repeat(4,minmax(200px,25%))'
+    gridTemplateColumns: 'repeat(4,25vw)'
   },
   image:{
     position:'absolute',
