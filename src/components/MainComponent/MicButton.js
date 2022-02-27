@@ -86,7 +86,10 @@ const AudioRecord = (port) => {
       
       var fd=new FormData()
       fd.append("audio",wavfromblob)
-
+      axios.post("https://self-ai.org:8882/setid",{"id":store.getState()["image"]})
+      .then(function(response){
+      
+      
         axios.post("https://self-ai.org:8882",fd)
 
         .then(function(response) {
@@ -106,6 +109,7 @@ const AudioRecord = (port) => {
             })
         }
         )
+      })
        
       
       

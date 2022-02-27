@@ -4,6 +4,7 @@ import store from '../../index'
 import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../../redux_src/chat_rdx";
 import { connect,useSelector } from 'react-redux'
 import font from '../font.css'
+import axios from 'axios'
 const mapStateToProps = state => ({
     chat: state.chat,
     video: state.video,
@@ -137,7 +138,8 @@ const Card=(args)=>
             </div>
             <Link className="link" to={"/"+name} style={{textDecoration: 'none' }}>
               <div style={chat? css.start: css.letschat_button }
-              onClick={()=>{store.dispatch(setImageNum(name))}}
+              onClick={()=>{store.dispatch(setImageNum(name))
+               }}
               onMouseEnter={()=>{setischat(1)}}
               onMouseLeave={()=>{setischat(0)}}>
                       LET'S CHAT
