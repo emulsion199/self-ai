@@ -32,7 +32,7 @@ const TalkingComponent=()=>
         }
         return(
     <div style={css.bg}>
-        <a href='https://self-ai.org:8883/' style={css.link}>
+        <a href='http://self-ai.net/' style={css.link}>
             <LeaveButton></LeaveButton>
         </a> 
         <Image type = {store.getState()['image']}></Image>
