@@ -3,6 +3,8 @@ import Welcome from './Welcome'
 import { Link } from 'react-router-dom'
 import Card from './Card'
 import { map } from 'lodash'
+import font from '../font.css'
+
 const css={
   top:{
     position:'absolute',
