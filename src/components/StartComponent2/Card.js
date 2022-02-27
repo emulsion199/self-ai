@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import store from '../../index'
 import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum} from "../../redux_src/chat_rdx";
 import { connect,useSelector } from 'react-redux'
+import font from '../font.css'
 const mapStateToProps = state => ({
     chat: state.chat,
     video: state.video,
@@ -17,6 +18,7 @@ const mapStateToProps = state => ({
   };
 const css=
 {
+
     image:{
         position:'absoolute',
         width:'80%',
@@ -26,6 +28,7 @@ const css=
         paddingTop:'10%'
     },
     name:{
+        fontFamily:'Roboto',
         fontSize:'2.7vw',
         fontWeight:'400',
         textAlign : 'center',
@@ -63,6 +66,7 @@ const css=
     },
     title:
     {
+      fontFamily:'Roboto bold',
       marginLeft:'10%',
       marginBottom:'5%',
       fontSize:'2vw',
@@ -70,7 +74,7 @@ const css=
     },
     desc:
     {
-
+      fontFamily:'Roboto',
       marginTop:'3%',
       marginLeft:'10%',
       paddingRight:'10%',
@@ -80,6 +84,7 @@ const css=
     },
     start:
     {
+      fontFamily:'Roboto bold',
       position:'absolute', 
       borderRadius:'6px',
       bottom:'4vh',
@@ -96,6 +101,7 @@ const css=
       fontSize:'1.2vw'
     },
     letschat_button:{
+      fontFamily:'Roboto bold',
       position:'absolute', 
       lineHeight:'3vh',
       borderRadius:'6px',

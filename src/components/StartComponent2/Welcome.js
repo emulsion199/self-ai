@@ -1,5 +1,5 @@
 import {react} from 'react'
-
+import font from '../font.css'
 const css={
     bg:{
         position:'relative',
@@ -22,7 +22,8 @@ const css={
         marginTop: '3%',
     },
     sentence:{
-        fontSize:'1.2vw'
+        fontSize:'1.2vw',
+        fontFamily:'Roboto'
     },
     name:{
         marginBottom:'-10%',
