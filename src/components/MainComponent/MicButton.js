@@ -4,7 +4,11 @@ import 'react-h5-audio-player/lib/styles.css';
 import ReactPlayer from 'react-player'
 import axios from 'axios'
 import store from '../../index'
+<<<<<<< Updated upstream
 import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum,sethowmanytry} from "../../redux_src/chat_rdx";
+=======
+import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum,isrecord} from "../../redux_src/chat_rdx";
+>>>>>>> Stashed changes
 import { connect,useSelector } from 'react-redux'
 import ReactAudioPlayer from "react-audio-player";
 
@@ -12,8 +16,12 @@ const mapStateToProps = state => ({
   chat: state.chat,
   video: state.video,
   image: state.image,
+<<<<<<< Updated upstream
   try: state.try,
 
+=======
+  recording: state.recording,
+>>>>>>> Stashed changes
 });
 
 const mapDispatchToProps = {
@@ -21,7 +29,11 @@ const mapDispatchToProps = {
   addTochatdata_output,
   addVideo,
   setImageNum,
+<<<<<<< Updated upstream
   sethowmanytry,
+=======
+  isrecord,
+>>>>>>> Stashed changes
 };
 const AudioRecord = (port) => {
   const [stream, setStream] = useState();
@@ -66,6 +78,7 @@ const AudioRecord = (port) => {
           audioCtx.createMediaStreamSource(stream).disconnect();
 
           mediaRecorder.ondataavailable = function (e) {
+            store.dispatch(isrecord(0))
             setAudioUrl(e.data);
             setOnRec(true);
           };
@@ -80,8 +93,12 @@ const AudioRecord = (port) => {
   const offRecAudio = () => {
     // dataavailable 이벤트로 Blob 데이터에 대한 응답을 받을 수 있음
     media.ondataavailable = function (e) {
+<<<<<<< Updated upstream
       store.dispatch(sethowmanytry(store.getState()['try']+1))
       console.log(store.getState()["try"])
+=======
+      store.dispatch(isrecord(0))
+>>>>>>> Stashed changes
       setAudioUrl(e.data);
       setOnRec(true);
       setAudio(URL.createObjectURL(e.data))
@@ -103,14 +120,18 @@ const AudioRecord = (port) => {
           
             //store.dispatch(addTochatdata_input(response.data['input']))
             store.dispatch(addTochatdata_output(response.data['output']))
+<<<<<<< Updated upstream
             
             axios.get(`https://self-ai.org:8882/get_mp3?timestamp=${new Date().getTime()}`,{responseType:'blob'}).then(function(response)
+=======
+            store.dispatch(isrecord(1))
+            axios.get("https://self-ai.org:8882/get_mp3",{responseType:'blob'}).then(function(response)
+
+>>>>>>> Stashed changes
             {
               console.log(response.data)
               console.log(URL.createObjectURL(response.data))
-  
                 store.dispatch(addVideo(URL.createObjectURL(response.data)))
-             
             })
         }
         )

@@ -31,6 +31,7 @@ export function isrecord(num)
     num
   }
 }
+<<<<<<< Updated upstream
 export function sethowmanytry(num)
 {
   return{
@@ -38,12 +39,18 @@ export function sethowmanytry(num)
     num
   }
 }
+=======
+>>>>>>> Stashed changes
 const initialState={
     video:'0',
-    chat:'hey',
+    chat:'Nice to meet you!',
     image:1,
+<<<<<<< Updated upstream
     recording:0,
     try:0,
+=======
+    recording:1,
+>>>>>>> Stashed changes
     
 }
 export default function reducer(state = initialState, action) {
@@ -68,16 +75,23 @@ export default function reducer(state = initialState, action) {
         ...state,
           image:action.idx
       }
+<<<<<<< Updated upstream
       case "IS_REDORDING":
+=======
+      case "IS_RECORD":
+>>>>>>> Stashed changes
         return{
           ...state,
           recording:action.num
         }
+<<<<<<< Updated upstream
       case "HOW_TRY":
         return{
           ...state,
           try:action.num
         }
+=======
+>>>>>>> Stashed changes
     default:
       return state
     }
