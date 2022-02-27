@@ -35,11 +35,8 @@ const CCButton=()=>
                 position:'absolute',
                 opacity:clicked,
                 bottom:'4vh',
-<<<<<<< Updated upstream
                 marginLeft:'8vw',
                 textAligh:'center',
-=======
->>>>>>> Stashed changes
                 height:'50px',
                 background:'rgba(0,0,0,0.7)',
                 color:'white',
@@ -61,11 +58,7 @@ const CCButton=()=>
         loading= <div style={{position:'absolute', top:'10vh', left:'37.5vw'}} className='loader'></div>
     }
     return(
-<<<<<<< Updated upstream
         <div>
-=======
-        <div style={{}}>
->>>>>>> Stashed changes
         <div onClick={()=>{clicked? setclicked(0): setclicked(1)
         console.log(record)}}
         style={{
@@ -89,12 +82,7 @@ const CCButton=()=>
             </div>
             
         </div>
-<<<<<<< Updated upstream
         {loading}
-=======
-        <div style={{textAlign:'center'}}>{loading}</div>
-        
->>>>>>> Stashed changes
         </div>
     )
 }
