@@ -3,7 +3,9 @@ import { connect,useSelector } from 'react-redux'
 import { addTochatdata_input, addTochatdata_output,addVideo,setImageNum } from "../../redux_src/chat_rdx";
 import TalkingComponent from './TalkingComponent'
 import SideComponent from './SideComponent';
-
+import "./css/mc.css"
+import axios from 'axios';
+import store from '../..';
 const mapStateToProps = state => ({
     chat: state.chat,
     video: state.video,
@@ -21,7 +23,7 @@ const mapDispatchToProps = {
   
 const MainComponent=()=>
 {
-
+  
        return(
          <div style={
            {

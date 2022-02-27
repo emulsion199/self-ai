@@ -1,13 +1,9 @@
 const css={
     image:{
-        position:'absolute',
-        bottom:'0%',
-        left:'15%',
-        height:'80%',
-        width:'43%',
-        display:'block',
-        marginLeft: 'auto',
-        marginRight: 'auto'
+        height:'auto',
+        maxWidth:'60%',
+        margin:'auto',
+        
     }
 }
 const Image=(args)=>
@@ -15,7 +11,9 @@ const Image=(args)=>
     const type= args.type
     return(
         <div>
-            <div>
+            <div
+            style={{position:'absolute', width:'calc(100% - 350px)',bottom:'0px'}}
+            >
                 <img style={css.image} src={require('../../image/'+type+'_full.png').default}></img>
             </div>  
         </div>

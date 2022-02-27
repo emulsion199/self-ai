@@ -16,8 +16,7 @@ const SideComponent=()=>
     <div style={css.bg}>
         <Question type = {'Joel'}></Question>
         <AudioRecord></AudioRecord>
-        <TypeComponent></TypeComponent>
-    </div>
+        </div>
         )
 }
 export default SideComponent

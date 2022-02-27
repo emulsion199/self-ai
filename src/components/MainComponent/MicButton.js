@@ -86,9 +86,8 @@ const AudioRecord = (port) => {
       
       var fd=new FormData()
       fd.append("audio",wavfromblob)
-      axios.post("https://self-ai.org:8882/setid",{"id":store.getState()['image']})
-      .then(function(response){console.log('check')})
-      axios.post("https://self-ai.org:8882",fd)
+
+        axios.post("https://self-ai.org:8882",fd)
 
         .then(function(response) {
             console.log(response)
@@ -107,10 +106,8 @@ const AudioRecord = (port) => {
             })
         }
         )
-        .catch(function(error) {
-            
-            console.log(error);
-        })
+       
+      
       
     }
 
@@ -127,15 +124,14 @@ const AudioRecord = (port) => {
    
 }
 
-
-
- 
-
- 
+const [ins,setins]=useState();
+const sendMessage=()=>
+{
+  setins("")
+}
 
   return (
     <div
- 
 >
 <ReactAudioPlayer
 src={store.getState()['video']}
@@ -170,12 +166,51 @@ autoPlay={true}
         }}>
           
          </img>
+
      
        
          
          
   
     </div>
+    <div
+        style={{
+            position:'absolute',
+            bottom:'4%',
+            right:'1.7%',
+            display:'grid',
+            gridTemplateColumns:'1fr 0.2fr',
+            background:'rgba(0,0,0,0.5)',
+            width:'20%',
+            height:'45px',
+            border: '0px solid black',
+            borderRadius: '100px',
+            paddingLeft:'20px',
+            color:'white',
+        }}>
+            <input 
+            onKeyPress={(e)=>{if(e.key=='Enter'){sendMessage()}}}
+            onChange={(e)=>{setins(e.target.value)}}
+            value={ins}
+            placeholder='Type Something'
+            className="input" style={{
+                backgroundColor:'rgba(0,0,0,0)',
+                border:'0px solid black',
+                color:'white',
+                fontSize:'15px',
+            }}>
+            </input>
+            
+            <div 
+            onClick={sendMessage}
+            style={{
+            marginTop:'14px',
+            marginRight:'20px',   
+        }}>
+            SEND
+        </div>
+     
+        </div>
     
       
     </div>
