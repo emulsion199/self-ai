@@ -3,6 +3,7 @@ const LeaveButton=()=>
     return(
     <div
     style={{
+        position:'absolute',
         height:'40px',
         width:'140px',
         border:'1px solid white',

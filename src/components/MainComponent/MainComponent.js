@@ -18,18 +18,25 @@ const mapDispatchToProps = {
     setImageNum,
   };
 
-  
+const css = {
+  image:{
+    position:'absolute',
+    height:'100vh',
+    width:'100vw'
+  },
+}
   
 const MainComponent=()=>
 {
-  
        return(
          <div style={
            {
              display:'grid',
-             gridTemplateColumns: '1.5fr 0.5fr',
+             gridTemplateColumns: '75vw 25vw', 
+             position:'absolute',
            }
          }>
+           <img style = {css.image} src={require('../../image/background_2.png').default}></img>
            <TalkingComponent></TalkingComponent>
            <SideComponent></SideComponent>
          </div>

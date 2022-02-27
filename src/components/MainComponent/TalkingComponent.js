@@ -25,7 +25,6 @@ const TalkingComponent=()=>
         {
             height:'100vh',
             width:'100wh',
-            backgroundColor:'rgb(28,37,60)',
         },
         link:{
             textDecoration:'none'

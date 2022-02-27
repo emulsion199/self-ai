@@ -1,5 +1,6 @@
 import QuestionBalloon from "./QuestionBalloon"
 import {useState,useEffect,useRef} from 'react'
+import font from '../../font.css'
 const question_list=
 [
     'How do you relieve stress?',
@@ -24,7 +25,7 @@ const css={
     unClicked:
     {   
         color:'white',
-        background:'rgba(18,27,40,0.4)',
+        background:'rgba(0,0,0,0.3)',
         textAlign:'center',
         justifyContent:'center',
         borderRadius:'5px',
@@ -37,7 +38,7 @@ const css={
     Clicked:
     {
         color:'white',
-        background:'rgba(18,27,40,0.8)',
+        background:'rgba(0,0,0,0.5)',
         textAlign:'center',
         justifyContent:'center',
         borderRadius:'5px',
@@ -68,8 +69,7 @@ const Question=(args)=>
             <div style={{
                 display:'grid',
                 gridTemplateColumns:'1fr 1fr',
-                paddingTop:'15%',
-                marginBottom:'-5%'
+                paddingTop:'5vh',
             }}>
             <div style={{
                 marginLeft:'15%',
@@ -78,7 +78,8 @@ const Question=(args)=>
                 paddingLeft:'20px',
                 color:'white',
                 fontWeight:'600',
-                fontSize:'150%'
+                fontSize:'2vw',
+                fontFamily:'Roboto'
             }}>
                 Ask {type}
             </div>
@@ -87,7 +88,8 @@ const Question=(args)=>
                 marginLeft: '58%',
                 color:'white',
                 fontWeight:'500',
-                fontSize:'125%'
+                fontSize:'1.3vw',
+                fontFamily:'Roboto bold'
                 }}>
                 {page_num} / 3
                 </div>

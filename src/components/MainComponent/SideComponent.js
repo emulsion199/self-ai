@@ -8,15 +8,22 @@ const SideComponent=()=>
     bg:
     {   
         height:'100vh',
-        width:'100wh',
-        backgroundColor:'rgba(30,36,65,0.83)',
+        width:'25vw',
+        background:'rgba(255,255,255,0.1)',
+        position:'absolute',
+        right:'0',
+    },
+    mic:{
+        position:'absolute',
+        bottom:'15vh',
     }
     }
         return(
     <div style={css.bg}>
         <Question type = {'Joel'}></Question>
-        <AudioRecord></AudioRecord>
-        </div>
+        <div style={css.mic}><AudioRecord></AudioRecord></div>
+        <TypeComponent></TypeComponent>
+    </div>
         )
 }
 export default SideComponent
