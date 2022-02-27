@@ -35,7 +35,7 @@ const CCButton=()=>
                 position:'absolute',
                 opacity:clicked,
                 bottom:'4vh',
-                left:500-chat.length*5.5+'px',
+                left:(500-chat.length*5.5)/13+'vw',
                 textAligh:'center',
                 height:'50px',
                 background:'rgba(0,0,0,0.7)',
