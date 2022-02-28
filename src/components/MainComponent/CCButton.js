@@ -37,7 +37,7 @@ const CCButton=()=>
                 bottom:'4vh',
                 left:(500-chat.length*5.5)/13+'vw',
                 textAligh:'center',
-                height:'50px',
+                height:'6vh',
                 background:'rgba(0,0,0,0.7)',
                 color:'white',
                 fontSize:'1.8vw',
