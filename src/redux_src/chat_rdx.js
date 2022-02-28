@@ -40,7 +40,7 @@ export function sethowmanytry(num)
 }
 const initialState={
     video:'0',
-    chat:'Nice to meet you!',
+    chat:'It is really nice meeting you! Shall we start talking???',
     image:1,
     recording:1,
     try:0,

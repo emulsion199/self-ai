@@ -26,6 +26,12 @@ const CCButton=()=>
     var loading=null
     const [clicked,setclicked]=useState(1)
     const chat= store.getState()['chat']
+    var l = 40
+    if (chat.length < 40){
+        l = chat.length
+    }
+    var width_len = '60vw'
+    console.log(l)
     const record = store.getState()['recording']
     console.log(record)
     if(store.getState()['recording']==1)
@@ -33,27 +39,23 @@ const CCButton=()=>
         loading=
             <div style={{
                 position:'absolute',
+                width:'50vw',
                 opacity:clicked,
                 bottom:'4vh',
-                left:(500-chat.length*5.5)/13+'vw',
-                textAligh:'center',
-                height:'6vh',
+                left:(500-l*5.5)/25+'vw',
+                textAlign:'center',
+                height:'auto',
                 background:'rgba(0,0,0,0.7)',
                 color:'white',
                 fontSize:'1.8vw',
-                fontFamily:'Poppins'
+                fontFamily:'Poppins',
+                paddingLeft:'10px',
+                paddingRight:'10px',
+                paddingTop:'1vh',
+                wordBreak:'break-word'
             }}>
-                <div
-                style={{
-                    whiteSpace:'nowrap',
-                    paddingLeft:'10px',
-                    marginRight:'10px',
-                    paddingTop:'1vh',
-                }}>
                 {chat}
-                </div>
-                
-                </div>
+            </div>
     }
     else{
         loading= <div style={{position:'absolute', top:'10vh', left:'37.5vw'}} className='loader'></div>
