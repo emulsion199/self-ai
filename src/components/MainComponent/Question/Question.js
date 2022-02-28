@@ -72,16 +72,17 @@ const Question=(args)=>
                 paddingTop:'5vh',
             }}>
             <div style={{
+                marginTop:'0.5vh',
                 marginLeft:'15%',
                 height:'50px',
                 borderRadius: '100px',
-                paddingLeft:'20px',
+                paddingLeft:'1vw',
                 color:'white',
                 fontWeight:'600',
-                fontSize:'2vw',
+                fontSize:'1.3vw',
                 fontFamily:'Roboto'
             }}>
-                Ask {type}
+                ASK {type}
             </div>
             <div style={{
                 paddingTop:'3%',
