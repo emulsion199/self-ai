@@ -41,13 +41,14 @@ const CCButton=()=>
                 background:'rgba(0,0,0,0.7)',
                 color:'white',
                 fontSize:'1.8vw',
+                fontFamily:'Poppins'
             }}>
                 <div
                 style={{
                     whiteSpace:'nowrap',
                     paddingLeft:'10px',
                     marginRight:'10px',
-                    paddingTop:'10px',
+                    paddingTop:'1vh',
                 }}>
                 {chat}
                 </div>
