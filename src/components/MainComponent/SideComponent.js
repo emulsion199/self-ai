@@ -34,7 +34,6 @@ const SideComponent=()=>
     <div style={css.bg}>
         <Question type = {name}></Question>
         <AudioRecord></AudioRecord>
-        <TypeComponent></TypeComponent>
     </div>
         )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, createRef } from "react";
+import React, { useState, useCallback, createRef, useEffect,useRef } from "react";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import ReactPlayer from 'react-player'
@@ -7,6 +7,8 @@ import store from '../../index'
 import { addTochatdata_input, addTochatdata_output, addVideo,setImageNum,isrecord,sethowmanytry} from "../../redux_src/chat_rdx";
 import { connect,useSelector } from 'react-redux'
 import ReactAudioPlayer from "react-audio-player";
+import { set } from "lodash";
+import '../MainComponent/Typing/input.css'
 
 const mapStateToProps = state => ({
   chat: state.chat,
@@ -133,12 +135,54 @@ const AudioRecord = (port) => {
     source.disconnect();
    
 }
+const [click,setclick]=useState(0)
+const [tp,settp]=useState(0)
+useEffect(() => {
+  // 브라우저 API를 이용하여 문서 타이틀을 업데이트합니다.
+  if(tp==1)
+  {
+      mf()
+  }
+});
+useEffect(() => {
+  // 브라우저 API를 이용하여 문서 타이틀을 업데이트합니다.
+  if(tp==0)
+  {
+      of()
+  }
+});
+const mic=useRef()
+const type=useRef()
+const of=()=>
+    {
 
+        mic.current.focus()
+        
+    }
+    const mf=()=>
+    {
+        console.log(tp)
+        type.current.focus()
+    }
 const [ins,setins]=useState();
 const sendMessage=()=>
 {
   setins("")
+  store.dispatch(sethowmanytry(store.getState()['try']+1))
+  axios.post("https://self-ai.org:8882/setid",{"id":store.getState()["image"],
+      "try":store.getState()["try"]})
+      .then(function(response){
+        axios.post("https://self-ai.org:8882/typ",{'input_text':ins})
+        .then(function(response) {
+            store.dispatch(addTochatdata_output(response.data['output']))
+            axios.get(`https://self-ai.org:8882/get_mp3?timestamp=${new Date().getTime()}`,{responseType:'blob'}).then(function(response)
+            {
+                store.dispatch(isrecord(1))
+                store.dispatch(addVideo(URL.createObjectURL(response.data)))
+                
+            })
 }
+        )})}
 
   return (
     <div
@@ -148,13 +192,21 @@ src={store.getState()['video']}
 autoPlay={true}
 
 />
+<div style={{color:'white',
+position:'absolute',
+bottom:'25vh',
+right:'3vw',
+width:'275px',
+height:'20px',
+opacity:onRec*80+'%',
+backgroundColor:'rgba(0,0,0,0.3)'}}>Hold the button or spacebar to speak</div>
       <div style={{
         position:'absolute',
         bottom:'15vh',
         right:'10.6vw',
         height:'50px',
-        filter:'invert('+onRec*100+'%)',
-        opacity:100-onRec*40+'%',
+        filter:'invert('+100+'%)',
+        opacity:50-onRec*20+'%',
         backgroundColor:'rgba(255,255,255,1)',
         width:'50px',
         borderRadius:'100px',
@@ -185,7 +237,66 @@ autoPlay={true}
     </div>
     
     
-      
+      <input 
+      style={{opacity:'0'}}
+      ref={mic}
+            onBlur={()=>{if(tp==0){of()}}}
+            onKeyDown={(e)=>
+            {
+              if(e.key==' ')
+              {
+              if(onRec==1)
+                {
+                  onRecAudio()
+                }
+                setOnRec(0)
+                
+            }}}
+            onKeyUp={(e)=>
+            {
+              if(e.key==' ')
+              {
+              if(onRec==0)
+                {
+                  offRecAudio()
+                }
+                setOnRec(1)
+            }}
+          }
+            ></input>
+            <div
+        style={{
+            position:'absolute',
+            bottom:'4vh',
+            right:'2.5vw',
+            display:'grid',
+            gridTemplateColumns:'1fr 0.2fr',
+            borderBottom:'1px solid white',
+            width:'19vw',
+            height:'5vh',
+            paddingLeft:'0.5vw',
+            color:'white',
+        }}>
+            <input 
+            ref={type}
+            onClick={()=>{settp(1)
+            }}
+            onBlur={()=>{settp(0)
+            of()}}
+            onKeyPress={(e)=>{if(e.key=='Enter'){sendMessage()}}}
+            onChange={(e)=>{setins(e.target.value)}}
+            value={ins}
+            placeholder='Type Something'
+            className="input" style={{
+                fontFamily:'Roboto',
+                backgroundColor:'rgba(0,0,0,0)',
+                border:'0px solid black',
+                color:'white',
+                fontSize:'1.2vw',
+            }}>
+            </input>
+            </div>
+    
     </div>
   );
 };
