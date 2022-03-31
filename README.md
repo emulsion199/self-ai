@@ -1,13 +1,33 @@
-1.App.js (react-route 써서 페이지 두 개 정의, 로드하는 부분)
- 1.start component (설명, 선택하는 부분)
- 2.main component (실제 대화하는 부분)
+# UI server with react
 
-2.StartComponent 폴더
-  -StartComponent (Welcome, Select 컴포넌트를 합치는 부분)
-    -Welcome (서비스 설명)
-    -Select (이미지 고르는 부분)
-        -SelectImage (이미지 스크롤 부분)
-            -OurImage (이미지)
- 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# self-ai
+## This React App is used to test conversation AI
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm install`
+Download the package specified in package.json.
+
+# If delploying in a server
+
+### `npm run build`
+
+### `PORT=portnum serve -s build`
+\
+## Additional Configs
+the first one, to post your recorded voice formdata to your ai server.
+another, to get the result of makeittalk rendering mp4 file from Url that provides send_file() method in flask.
+
+
+In src/components/MicButton.js , you can check this 
+
+
