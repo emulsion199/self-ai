@@ -245,16 +245,12 @@ visibility:visibilitys}}>Hold the button or spacebar to speak</div>
           
          </img>
 
-     
-       
-         
-         
   
     </div>
     
     
       <input 
-      style={{visibility:'hidden'}}
+      style={Mobile?{visibility:'hidden'}: {opacity:'0'}}
       ref={mic}
             onBlur={()=>{if(tp==0){of()}}}
             onKeyDown={(e)=>

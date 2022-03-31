@@ -36,6 +36,7 @@ const CCButton=()=>
     const record = store.getState()['recording']
     const tx=Pc?'-25%':'-50%'
     const tx2=Pc?'25%':'50%'
+    const loadx= Pc?'37.5%':'50%'
     const fs=Pc?'1.4vw':'3vw'
     console.log(record)
     if(store.getState()['recording']==1)
@@ -62,7 +63,7 @@ const CCButton=()=>
             </div>
     }
     else{
-        loading= <div style={{position:'absolute', top:'10vh', left:'37.5vw'}} className='loader'></div>
+        loading= <div style={{position:'absolute', top:'10vh', left:loadx}} className='loader'></div>
     }
     return(
         <div>
