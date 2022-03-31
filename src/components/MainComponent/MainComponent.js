@@ -5,6 +5,10 @@ import TalkingComponent from './TalkingComponent'
 import SideComponent from './SideComponent';
 import axios from 'axios';
 import store from '../..';
+import { useMediaQuery } from 'react-responsive'
+import MicButton from './MicButton';
+
+    
 const mapStateToProps = state => ({
     chat: state.chat,
     video: state.video,
@@ -28,17 +32,29 @@ const css = {
   
 const MainComponent=()=>
 {
+  const handleMediaQueryChange = (matches) => { }
+    const Pc = useMediaQuery(
+        { minWidth: 1024 }, undefined, handleMediaQueryChange
+      );
+      const Mobile = useMediaQuery(
+        { maxWidth: 1024 }, undefined, handleMediaQueryChange
+      );
+      const widths= Pc?'75vw 25vw' : '100vw'
        return(
+         
          <div style={
            {
              display:'grid',
-             gridTemplateColumns: '75vw 25vw', 
+             gridTemplateColumns: widths, 
              position:'absolute',
            }
          }>
            <img style = {css.image} src={require('../../image/background_2.png').default}></img>
-           <TalkingComponent></TalkingComponent>
-           <SideComponent></SideComponent>
+
+           {Pc&&<TalkingComponent></TalkingComponent>}
+           {Pc&&<SideComponent></SideComponent>}
+           {Mobile&&<div><TalkingComponent></TalkingComponent><MicButton></MicButton></div>}
+           
          </div>
        )
           

@@ -3,7 +3,7 @@ import store from '../..';
 import { addTochatdata_input, addTochatdata_output,addVideo,setImageNum,isrecord } from "../../redux_src/chat_rdx";
 import { useState } from 'react';
 import '../font.css';
-
+import { useMediaQuery } from 'react-responsive'
 const mapStateToProps = state => ({
     chat: state.chat,
     video: state.video,
@@ -23,35 +23,39 @@ const mapDispatchToProps = {
 
 const CCButton=()=>
 {
+    const handleMediaQueryChange = (matches) => { }
+    const Pc = useMediaQuery(
+        { minWidth: 1024 }, undefined, handleMediaQueryChange
+      );
+      const Mobile = useMediaQuery(
+        { maxWidth: 1024 }, undefined, handleMediaQueryChange
+      );
     var loading=null
     const [clicked,setclicked]=useState(1)
     const chat= store.getState()['chat']
-    var l = 40
-    if (chat.length < 40){
-        l = chat.length
-    }
-    var width_len = '60vw'
-    console.log(l)
     const record = store.getState()['recording']
+    const tx=Pc?'-25%':'-50%'
+    const tx2=Pc?'25%':'50%'
+    const fs=Pc?'1.4vw':'3vw'
     console.log(record)
     if(store.getState()['recording']==1)
     {
         loading=
             <div style={{
                 position:'absolute',
-                width:'50vw',
+                width:'50%',
+                bottom:'20px',
+                left: tx2,
+                transform: 'translateX('+tx+')',
                 opacity:clicked,
-                bottom:'4vh',
-                left:(500-l*5.5)/25+'vw',
                 textAlign:'center',
                 height:'auto',
                 background:'rgba(0,0,0,0.7)',
                 color:'white',
-                fontSize:'1.8vw',
+                fontSize:'20px',
                 fontFamily:'Poppins',
                 paddingLeft:'10px',
                 paddingRight:'10px',
-                paddingTop:'1vh',
                 wordBreak:'break-word'
             }}>
                 {chat}
@@ -66,12 +70,11 @@ const CCButton=()=>
         console.log(record)}}
         style={{
             position:'absolute',
-            bottom:'0%',
-            left:'0%',
+            bottom:'-10px',
+            left:'10px',
             width:'50px',
             height:'50px',
             marginBottom:'4vh', 
-            left:'2vw',
             background:'rgba(0,0,0,0.7)',
             textAlign:'center',
             color:'white',

@@ -1,6 +1,8 @@
 import QuestionBalloon from "./QuestionBalloon"
 import {useState,useEffect,useRef} from 'react'
 import font from '../../font.css'
+import { useMediaQuery } from 'react-responsive'
+
 const question_list=
 [
     'How do you relieve stress?',
@@ -51,6 +53,14 @@ const css={
 }
 const Question=(args)=>
 {   
+    const handleMediaQueryChange = (matches) => { }
+    const Pc = useMediaQuery(
+        { minWidth: 1024 }, undefined, handleMediaQueryChange
+      );
+      const Mobile = useMediaQuery(
+        { maxWidth: 1024 }, undefined, handleMediaQueryChange
+      );
+    
     const type= args.type
     
     const [page_num, setPage_num]= useState(1)
@@ -66,6 +76,7 @@ const Question=(args)=>
     };
     return(
         <div>
+            {Pc&&<div>
             <div style={{
                 display:'grid',
                 gridTemplateColumns:'1fr 1fr',
@@ -111,7 +122,7 @@ const Question=(args)=>
                 <div onClick={onLeftMove} style={page_num==1? css.unClicked:css.Clicked}> {a} </div>
                 <div onClick={onRightMove} style={page_num==3? css.unClicked:css.Clicked}> {b} </div>
             </div>
-        
+        </div>}
         </div>
     )
 }

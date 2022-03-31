@@ -1,10 +1,10 @@
 const css={
     image:{
-        height:'1.2vw',
-        marginTop:'0.9vh'
+        height:'15px',
+        marginTop:'5px'
     },
     word:{
-        fontSize:'1.7vw',
+        fontSize:'20px',
         paddingTop:'0',
         color:'white'
     }

@@ -9,6 +9,7 @@ import { connect,useSelector } from 'react-redux'
 import ReactAudioPlayer from "react-audio-player";
 import { set } from "lodash";
 import '../MainComponent/Typing/input.css'
+import { useMediaQuery } from 'react-responsive'
 
 const mapStateToProps = state => ({
   chat: state.chat,
@@ -27,6 +28,13 @@ const mapDispatchToProps = {
   sethowmanytry,
 };
 const AudioRecord = (port) => {
+  const handleMediaQueryChange = (matches) => { }
+    const Pc = useMediaQuery(
+        { minWidth: 1024 }, undefined, handleMediaQueryChange
+      );
+      const Mobile = useMediaQuery(
+        { maxWidth: 1024 }, undefined, handleMediaQueryChange
+      );
   const [stream, setStream] = useState();
   const [media, setMedia] = useState();
   const [onRec, setOnRec] = useState(true);
@@ -183,7 +191,9 @@ const sendMessage=()=>
             })
 }
         )})}
-
+  const margintops=Pc?'30px':'-84px'
+  const visibilitys=Pc?'visible':'hidden'
+  const marginlefts=Pc?'42%':'85%'
   return (
     <div
 >
@@ -192,18 +202,22 @@ src={store.getState()['video']}
 autoPlay={true}
 
 />
+{
 <div style={{color:'white',
-position:'absolute',
-bottom:'25vh',
-right:'3vw',
-width:'275px',
-height:'20px',
+margin:'0 auto',
+
+marginTop:margintops,
+width:'auto',
+maxWidth:'80%',
+height:'auto',
+textAlign:'center',
+fontSize:'1vw',
+fontWeight:'bold',
 opacity:onRec*80+'%',
-backgroundColor:'rgba(0,0,0,0.3)'}}>Hold the button or spacebar to speak</div>
+backgroundColor:'rgba(0,0,0,0.3)',
+visibility:visibilitys}}>Hold the button or spacebar to speak</div>
+}
       <div style={{
-        position:'absolute',
-        bottom:'15vh',
-        right:'10.6vw',
         height:'50px',
         filter:'invert('+100+'%)',
         opacity:50-onRec*20+'%',
@@ -211,7 +225,8 @@ backgroundColor:'rgba(0,0,0,0.3)'}}>Hold the button or spacebar to speak</div>
         width:'50px',
         borderRadius:'100px',
         color:'white',
-        margin:'0 auto',
+        marginLeft:marginlefts,
+
         transition: 'all ease 0.2s',
       }}
       onClick={onRec ? onRecAudio : offRecAudio}>
@@ -222,6 +237,7 @@ backgroundColor:'rgba(0,0,0,0.3)'}}>Hold the button or spacebar to speak</div>
           height:'30px',
           marginLeft:'10px',
           marginTop:'10px',
+          
           borderRadius:'100%',
           opacity:'1',
           
@@ -264,6 +280,8 @@ backgroundColor:'rgba(0,0,0,0.3)'}}>Hold the button or spacebar to speak</div>
             }}
           }
             ></input>
+            {Pc&&
+            <div>
             <div
         style={{
             position:'absolute',
@@ -296,6 +314,7 @@ backgroundColor:'rgba(0,0,0,0.3)'}}>Hold the button or spacebar to speak</div>
             }}>
             </input>
             </div>
+            </div>}
     
     </div>
   );
